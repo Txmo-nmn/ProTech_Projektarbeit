@@ -38,7 +38,7 @@ Ziel ist es, ein **Java-Programm mit grafischer Benutzeroberfläche (Swing)** zu
 
 1. Repository klonen  
    ```bash
-   git clone https://github.com/<username>/<repository-name>.git
+   git clone https://github.com/Txmo-nmn/ProTech_Projektarbeit.git
    ```
 2. Projekt in **IntelliJ IDEA** öffnen  
 3. Falls `.frm`-Dateien vorhanden sind, GUI-Designer aktivieren  
