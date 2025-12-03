@@ -121,7 +121,11 @@
           </grid>
         </constraints>
         <properties>
-          <model/>
+          <model>
+            <item value="Gehäuse 1"/>
+            <item value="Gehäuse 2"/>
+            <item value="Gehäuse 3"/>
+          </model>
         </properties>
       </component>
       <component id="fa5da" class="javax.swing.JComboBox" binding="cpu_comboBox">
@@ -130,7 +134,13 @@
             <preferred-size width="355" height="34"/>
           </grid>
         </constraints>
-        <properties/>
+        <properties>
+          <model>
+            <item value="CPU 1"/>
+            <item value="CPU 2"/>
+            <item value="CPU 3"/>
+          </model>
+        </properties>
       </component>
       <component id="4342b" class="javax.swing.JComboBox" binding="gpu_comboBox">
         <constraints>
@@ -138,7 +148,13 @@
             <preferred-size width="355" height="34"/>
           </grid>
         </constraints>
-        <properties/>
+        <properties>
+          <model>
+            <item value="GPU 1"/>
+            <item value="GPU 2"/>
+            <item value="GPU 3"/>
+          </model>
+        </properties>
       </component>
       <component id="60dd4" class="javax.swing.JComboBox" binding="ram_comboBox">
         <constraints>
@@ -146,7 +162,13 @@
             <preferred-size width="355" height="34"/>
           </grid>
         </constraints>
-        <properties/>
+        <properties>
+          <model>
+            <item value="RAM 1"/>
+            <item value="RAM 2"/>
+            <item value="RAM 3"/>
+          </model>
+        </properties>
       </component>
       <component id="e9ce6" class="javax.swing.JComboBox" binding="motherboard_comboBox">
         <constraints>
@@ -154,7 +176,13 @@
             <preferred-size width="355" height="34"/>
           </grid>
         </constraints>
-        <properties/>
+        <properties>
+          <model>
+            <item value="Motherboard 1"/>
+            <item value="Motherboard 2"/>
+            <item value="Motherboard 3"/>
+          </model>
+        </properties>
       </component>
       <component id="6ed89" class="javax.swing.JComboBox" binding="cpuCooler_comboBox">
         <constraints>
@@ -162,7 +190,13 @@
             <preferred-size width="355" height="34"/>
           </grid>
         </constraints>
-        <properties/>
+        <properties>
+          <model>
+            <item value="CPU Cooler 1"/>
+            <item value="CPU Cooler 2"/>
+            <item value="CPU Cooler 3"/>
+          </model>
+        </properties>
       </component>
       <component id="83437" class="javax.swing.JComboBox" binding="memory_comboBox">
         <constraints>
@@ -170,7 +204,17 @@
             <preferred-size width="355" height="34"/>
           </grid>
         </constraints>
-        <properties/>
+        <properties>
+          <model>
+            <item value="SSD 1"/>
+            <item value="SSD 2"/>
+            <item value="SSD 3"/>
+            <item value="HDD 1"/>
+            <item value="HDD 2"/>
+            <item value="NVME 1"/>
+            <item value="NVME 2"/>
+          </model>
+        </properties>
       </component>
       <component id="f68a8" class="javax.swing.JComboBox" binding="psu_comboBox">
         <constraints>
@@ -178,7 +222,13 @@
             <preferred-size width="355" height="34"/>
           </grid>
         </constraints>
-        <properties/>
+        <properties>
+          <model>
+            <item value="PSU 1"/>
+            <item value="PSU 2"/>
+            <item value="PSU 3"/>
+          </model>
+        </properties>
       </component>
       <component id="487cf" class="javax.swing.JLabel" binding="preisSumme_label">
         <constraints>
