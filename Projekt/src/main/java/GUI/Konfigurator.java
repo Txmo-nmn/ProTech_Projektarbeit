@@ -34,6 +34,9 @@ public class Konfigurator {
     private JLabel memoryPreis_label;
     private JLabel psuPreis_label;
     private JLabel preisSumme_label;
+    private JTextArea konfigurationen_textArea;
+    private JButton speichern_button;
+    private JLabel konfigurationen_label;
 }
 
 
