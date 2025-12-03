@@ -1,13 +1,304 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="GUI.Konfigurator">
-  <grid id="27dc6" row-count="1" column-count="1" layout-manager="GridLayoutManager">
+  <grid id="27dc6" layout-manager="GridLayoutManager" row-count="11" column-count="9" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="0" left="0" bottom="0" right="0"/>
     <constraints>
-      <xy x="20" y="20" width="500" height="400"/>
-      <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+      <xy x="20" y="20" width="647" height="426"/>
     </constraints>
-    <properties/>
+    <properties>
+      <background color="-14803426"/>
+      <foreground color="-14803426"/>
+    </properties>
     <border type="none"/>
-    <children/>
+    <children>
+      <component id="cf1b5" class="javax.swing.JLabel" binding="gesamtpreis_label">
+        <constraints>
+          <grid row="9" column="0" row-span="1" col-span="6" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-394241"/>
+          <foreground color="-394241"/>
+          <text value="Gesamtpreis"/>
+        </properties>
+      </component>
+      <component id="bdae" class="javax.swing.JLabel" binding="cpuCooler_label">
+        <constraints>
+          <grid row="6" column="0" row-span="1" col-span="4" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-394241"/>
+          <foreground color="-394241"/>
+          <text value="CPU-Cooler"/>
+        </properties>
+      </component>
+      <component id="db62e" class="javax.swing.JLabel" binding="title_label">
+        <constraints>
+          <grid row="0" column="0" row-span="1" col-span="6" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false">
+            <preferred-size width="97" height="56"/>
+          </grid>
+        </constraints>
+        <properties>
+          <background color="-394241"/>
+          <font name="JetBrains Mono" size="26" style="1"/>
+          <foreground color="-394241"/>
+          <text value="PC Konfigurator"/>
+        </properties>
+      </component>
+      <component id="582be" class="javax.swing.JLabel" binding="memory_label">
+        <constraints>
+          <grid row="7" column="0" row-span="1" col-span="4" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-394241"/>
+          <foreground color="-394241"/>
+          <text value="Memory"/>
+        </properties>
+      </component>
+      <component id="975f4" class="javax.swing.JLabel" binding="cpu_label">
+        <constraints>
+          <grid row="2" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-394241"/>
+          <foreground color="-394241"/>
+          <text value="CPU"/>
+        </properties>
+      </component>
+      <component id="ef6b7" class="javax.swing.JLabel" binding="gehaeuse_label">
+        <constraints>
+          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-394241"/>
+          <foreground color="-394241"/>
+          <text value="Gehäuse"/>
+        </properties>
+      </component>
+      <component id="c3b77" class="javax.swing.JLabel" binding="gpu_label">
+        <constraints>
+          <grid row="3" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-394241"/>
+          <foreground color="-394241"/>
+          <text value="GPU"/>
+        </properties>
+      </component>
+      <component id="a61d4" class="javax.swing.JLabel" binding="motherboard_label">
+        <constraints>
+          <grid row="5" column="0" row-span="1" col-span="4" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-394241"/>
+          <foreground color="-394241"/>
+          <text value="Motherboard"/>
+        </properties>
+      </component>
+      <component id="212f9" class="javax.swing.JLabel" binding="ram_label">
+        <constraints>
+          <grid row="4" column="0" row-span="1" col-span="4" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-394241"/>
+          <foreground color="-394241"/>
+          <text value="RAM"/>
+        </properties>
+      </component>
+      <component id="8a309" class="javax.swing.JLabel" binding="psu_label">
+        <constraints>
+          <grid row="8" column="0" row-span="1" col-span="4" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-394241"/>
+          <foreground color="-394241"/>
+          <text value="PSU"/>
+        </properties>
+      </component>
+      <component id="8a65e" class="javax.swing.JComboBox" binding="gehaeuse_comboBox">
+        <constraints>
+          <grid row="1" column="4" row-span="1" col-span="2" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="355" height="34"/>
+          </grid>
+        </constraints>
+        <properties>
+          <model/>
+        </properties>
+      </component>
+      <component id="fa5da" class="javax.swing.JComboBox" binding="cpu_comboBox">
+        <constraints>
+          <grid row="2" column="4" row-span="1" col-span="2" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="355" height="34"/>
+          </grid>
+        </constraints>
+        <properties/>
+      </component>
+      <component id="4342b" class="javax.swing.JComboBox" binding="gpu_comboBox">
+        <constraints>
+          <grid row="3" column="4" row-span="1" col-span="2" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="355" height="34"/>
+          </grid>
+        </constraints>
+        <properties/>
+      </component>
+      <component id="60dd4" class="javax.swing.JComboBox" binding="ram_comboBox">
+        <constraints>
+          <grid row="4" column="4" row-span="1" col-span="2" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="355" height="34"/>
+          </grid>
+        </constraints>
+        <properties/>
+      </component>
+      <component id="e9ce6" class="javax.swing.JComboBox" binding="motherboard_comboBox">
+        <constraints>
+          <grid row="5" column="4" row-span="1" col-span="2" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="355" height="34"/>
+          </grid>
+        </constraints>
+        <properties/>
+      </component>
+      <component id="6ed89" class="javax.swing.JComboBox" binding="cpuCooler_comboBox">
+        <constraints>
+          <grid row="6" column="4" row-span="1" col-span="2" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="355" height="34"/>
+          </grid>
+        </constraints>
+        <properties/>
+      </component>
+      <component id="83437" class="javax.swing.JComboBox" binding="memory_comboBox">
+        <constraints>
+          <grid row="7" column="4" row-span="1" col-span="2" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="355" height="34"/>
+          </grid>
+        </constraints>
+        <properties/>
+      </component>
+      <component id="f68a8" class="javax.swing.JComboBox" binding="psu_comboBox">
+        <constraints>
+          <grid row="8" column="4" row-span="1" col-span="2" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="355" height="34"/>
+          </grid>
+        </constraints>
+        <properties/>
+      </component>
+      <component id="487cf" class="javax.swing.JLabel" binding="preisSumme_label">
+        <constraints>
+          <grid row="9" column="7" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <font size="9"/>
+          <text value="Label"/>
+        </properties>
+      </component>
+      <component id="789f3" class="javax.swing.JLabel" binding="cpuPreislabel">
+        <constraints>
+          <grid row="2" column="7" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <font size="9"/>
+          <text value="Label"/>
+        </properties>
+      </component>
+      <component id="bc4d" class="javax.swing.JLabel" binding="gpuPreis_label">
+        <constraints>
+          <grid row="3" column="7" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <font size="9"/>
+          <text value="Label"/>
+        </properties>
+      </component>
+      <component id="61326" class="javax.swing.JLabel" binding="ramPreis_label">
+        <constraints>
+          <grid row="4" column="7" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <font size="9"/>
+          <text value="Label"/>
+        </properties>
+      </component>
+      <component id="25ebb" class="javax.swing.JLabel" binding="motherboardPreis_label">
+        <constraints>
+          <grid row="5" column="7" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <font size="9"/>
+          <text value="Label"/>
+        </properties>
+      </component>
+      <component id="9fb61" class="javax.swing.JLabel" binding="cpuCoolerPreis_label">
+        <constraints>
+          <grid row="6" column="7" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <font size="9"/>
+          <text value="Label"/>
+        </properties>
+      </component>
+      <component id="d1b3b" class="javax.swing.JLabel" binding="memoryPreis_label">
+        <constraints>
+          <grid row="7" column="7" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <font size="9"/>
+          <text value="Label"/>
+        </properties>
+      </component>
+      <component id="62702" class="javax.swing.JLabel" binding="psuPreis_label">
+        <constraints>
+          <grid row="8" column="7" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <font size="9"/>
+          <text value="Label"/>
+        </properties>
+      </component>
+      <component id="3c98" class="javax.swing.JLabel" binding="gehaeusePreis_label">
+        <constraints>
+          <grid row="1" column="7" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <font size="9"/>
+          <text value="Label"/>
+        </properties>
+      </component>
+      <vspacer id="ebb43">
+        <constraints>
+          <grid row="10" column="5" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+        </constraints>
+      </vspacer>
+      <grid id="d0cc1" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <grid row="0" column="8" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-14803426"/>
+        </properties>
+        <border type="none"/>
+        <children/>
+      </grid>
+      <grid id="a8b0" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <grid row="10" column="4" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-14803426"/>
+        </properties>
+        <border type="none"/>
+        <children/>
+      </grid>
+      <grid id="7a112" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <grid row="0" column="6" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-14803426"/>
+        </properties>
+        <border type="none"/>
+        <children/>
+      </grid>
+    </children>
   </grid>
 </form>
