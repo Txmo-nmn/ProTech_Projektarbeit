@@ -13,40 +13,7 @@ Ziel ist es, ein **Java-Programm mit grafischer Benutzeroberfläche (Swing)** zu
 
 ---
 
-## 🎯 Aufgabenübersicht
-
-### **Aufgabe 1 – Java-Applikation mit GUI**
-Erstelle ein Java-Programm, das:
-- Objekte einer selbst definierten Klasse (z. B. `Tasche`, `Auto`, `Student`) verwaltet  
-- mindestens **3 Attribute unterschiedlicher Datentypen** besitzt  
-- über eine GUI (Swing) Eingabe, Speicherung und Filterung der Objekte erlaubt  
-- eine Methode zur **Berechnung oder Filterung** implementiert, die mit **JUnit** getestet wird  
-- eine **Methode `initObjekte()`** enthält, die beim Programmstart mindestens 3 Beispiel-Objekte erzeugt  
-- Fehlerhafte Eingaben mit **Exception-Handling** behandelt  
-- Objekte im GUI-Bereich anzeigt, inklusive **Filter- und Sortierfunktion**
-
----
-
-### **Aufgabe 2 – Präsentationsvideo**
-- Erstelle ein **max. 3-minütiges Lehrvideo**, in dem das Programm vorgestellt wird  
-- Alle Gruppenmitglieder müssen erscheinen  
-- Erkläre anhand eines **UML-Klassendiagramms** den Aufbau des Projekts  
-- Beachte **fachliche Richtigkeit**, **Originalität** und **filmische Qualität**
-
----
-
-### **Aufgabe 3 – (Optional) GitHub-Integration**
-Zur Verbesserung der Zusammenarbeit wird das Projekt über **GitHub** verwaltet:
-1. Neues Repository anlegen  
-2. Quellcode, Swing-Formulare (`.java`, `.frm`), JUnit-Tests etc. hochladen  
-3. Sinnvolle Ordnerstruktur (z. B. `/src`, `/test`, `/resources`)  
-4. Regelmäßige Commits mit aussagekräftigen Nachrichten  
-5. Nutzung von GitHub-Features wie **Pull Requests**  
-6. Dokumentation in dieser **README.md**
-
----
-
-## 📂 Projektstruktur
+## 📂 Projektstruktur 
 
 ```
 ├── src/                # Haupt-Quellcode (Java-Klassen, GUI)
@@ -86,32 +53,6 @@ Zum Ausführen in IntelliJ:
 ```
 Rechtsklick → Run 'All Tests'
 ```
-
----
-
-## 🧠 Bewertungskriterien (Auszug)
-
-| Kriterium | Punkte |
-|------------|---------|
-| mind. 2 Klassen, 3 Attribute (versch. Datentypen) | 5 |
-| Methode zur Berechnung/Filterung | 3 |
-| JUnit-Test | 4 |
-| GUI funktionsfähig & sinnvoll | 2 |
-| Exception-Handling | 3 |
-| UML-Diagramm | 3 |
-| Lehrvideo | 3 |
-| Originelle Idee | 1 |
-| GitHub-Integration (Bonus) | +5 |
-| **Gesamt:** max. 35 Punkte |   |
-
----
-
-## 🧾 Hinweise
-
-- Alle Gruppenmitglieder müssen an der Erstellung beteiligt sein  
-- Quellen und verwendete KI-Tools sind anzugeben  
-- Abgabe erfolgt elektronisch über **Moodle** bis **16. Januar 2026**  
-- Befragungen finden ab **19. Januar 2026** via **Zoom** statt
 
 ---
 
