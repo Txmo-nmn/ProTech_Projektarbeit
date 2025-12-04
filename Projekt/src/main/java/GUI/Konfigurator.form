@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="GUI.Konfigurator">
-  <grid id="27dc6" layout-manager="GridLayoutManager" row-count="14" column-count="10" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+  <grid id="27dc6" binding="main_Panel" layout-manager="GridLayoutManager" row-count="14" column-count="10" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="0" left="0" bottom="0" right="0"/>
     <constraints>
-      <xy x="20" y="20" width="763" height="539"/>
+      <xy x="20" y="20" width="765" height="539"/>
     </constraints>
     <properties>
       <background color="-14803426"/>
@@ -123,6 +123,7 @@
         <properties>
           <background color="-657413"/>
           <model>
+            <item value="Auswählen ..."/>
             <item value="Gehäuse 1"/>
             <item value="Gehäuse 2"/>
             <item value="Gehäuse 3"/>
@@ -137,6 +138,7 @@
         </constraints>
         <properties>
           <model>
+            <item value="Auswählen ..."/>
             <item value="CPU 1"/>
             <item value="CPU 2"/>
             <item value="CPU 3"/>
@@ -151,6 +153,7 @@
         </constraints>
         <properties>
           <model>
+            <item value="Auswählen ..."/>
             <item value="GPU 1"/>
             <item value="GPU 2"/>
             <item value="GPU 3"/>
@@ -165,6 +168,7 @@
         </constraints>
         <properties>
           <model>
+            <item value="Auswählen ..."/>
             <item value="RAM 1"/>
             <item value="RAM 2"/>
             <item value="RAM 3"/>
@@ -179,6 +183,7 @@
         </constraints>
         <properties>
           <model>
+            <item value="Auswählen ..."/>
             <item value="Motherboard 1"/>
             <item value="Motherboard 2"/>
             <item value="Motherboard 3"/>
@@ -193,6 +198,7 @@
         </constraints>
         <properties>
           <model>
+            <item value="Auswählen ..."/>
             <item value="CPU Cooler 1"/>
             <item value="CPU Cooler 2"/>
             <item value="CPU Cooler 3"/>
@@ -207,6 +213,7 @@
         </constraints>
         <properties>
           <model>
+            <item value="Auswählen ..."/>
             <item value="SSD 1"/>
             <item value="SSD 2"/>
             <item value="SSD 3"/>
@@ -225,6 +232,7 @@
         </constraints>
         <properties>
           <model>
+            <item value="Auswählen ..."/>
             <item value="PSU 1"/>
             <item value="PSU 2"/>
             <item value="PSU 3"/>
@@ -236,16 +244,20 @@
           <grid row="10" column="8" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
+          <background color="-394241"/>
           <font size="9"/>
+          <foreground color="-394241"/>
           <text value="Label"/>
         </properties>
       </component>
-      <component id="789f3" class="javax.swing.JLabel" binding="cpuPreislabel">
+      <component id="789f3" class="javax.swing.JLabel" binding="cpuPreis_label">
         <constraints>
           <grid row="2" column="8" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
+          <background color="-394241"/>
           <font size="9"/>
+          <foreground color="-394241"/>
           <text value="Label"/>
         </properties>
       </component>
@@ -254,7 +266,9 @@
           <grid row="3" column="8" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
+          <background color="-394241"/>
           <font size="9"/>
+          <foreground color="-394241"/>
           <text value="Label"/>
         </properties>
       </component>
@@ -263,7 +277,9 @@
           <grid row="4" column="8" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
+          <background color="-394241"/>
           <font size="9"/>
+          <foreground color="-394241"/>
           <text value="Label"/>
         </properties>
       </component>
@@ -272,7 +288,9 @@
           <grid row="5" column="8" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
+          <background color="-394241"/>
           <font size="9"/>
+          <foreground color="-394241"/>
           <text value="Label"/>
         </properties>
       </component>
@@ -281,7 +299,9 @@
           <grid row="6" column="8" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
+          <background color="-394241"/>
           <font size="9"/>
+          <foreground color="-394241"/>
           <text value="Label"/>
         </properties>
       </component>
@@ -290,7 +310,9 @@
           <grid row="7" column="8" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
+          <background color="-394241"/>
           <font size="9"/>
+          <foreground color="-394241"/>
           <text value="Label"/>
         </properties>
       </component>
@@ -299,7 +321,9 @@
           <grid row="8" column="8" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
+          <background color="-394241"/>
           <font size="9"/>
+          <foreground color="-394241"/>
           <text value="Label"/>
         </properties>
       </component>
@@ -308,7 +332,10 @@
           <grid row="1" column="8" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
+          <background color="-394241"/>
+          <enabled value="true"/>
           <font size="9"/>
+          <foreground color="-394241"/>
           <text value="Label"/>
         </properties>
       </component>
