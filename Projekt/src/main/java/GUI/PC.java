@@ -26,7 +26,7 @@ public class PC {
 
     }
 
-    //gibt objekt aus
+    //gibt objekt auf Konsole aus (zum Test)
     @Override
     public String toString() {
         return "PC{" +

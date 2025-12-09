@@ -15,14 +15,14 @@ public class Konfigurator extends JFrame{
     private JLabel gesamtpreis_label;
 
     //Componentauswahl:
-    private JComboBox gehaeuse_comboBox;
-    private JComboBox cpu_comboBox;
-    private JComboBox gpu_comboBox;
-    private JComboBox ram_comboBox;
-    private JComboBox motherboard_comboBox;
-    private JComboBox cpuCooler_comboBox;
-    private JComboBox memory_comboBox;
-    private JComboBox psu_comboBox;
+    public JComboBox gehaeuse_comboBox;
+    public JComboBox cpu_comboBox;
+    public JComboBox gpu_comboBox;
+    public JComboBox ram_comboBox;
+    public JComboBox motherboard_comboBox;
+    public JComboBox cpuCooler_comboBox;
+    public JComboBox memory_comboBox;
+    public JComboBox psu_comboBox;
 
     //Componentpreise:
     private JLabel gehaeusePreis_label;
@@ -50,16 +50,6 @@ public class Konfigurator extends JFrame{
     private double psuPreis;
     private double gesPreis;
 
-    //ausgewählte Komponenten
-    private String gehaeuse;
-    private String cpu;
-    private String gpu;
-    private String ram;
-    private String motherboard;
-    private String cpuCooler;
-    private String memory;
-    private String psu;
-
 
     public static void main(String[] args) {
         new Konfigurator();
@@ -74,6 +64,8 @@ public class Konfigurator extends JFrame{
         setVisible(true);
         reset();
 
+        Controller controller = new Controller(this);       //erstellt ein Controller object (muss maybe dann bei der startgui eingfügt und hier gelöscht werden)
+
         //updatet PreisLabels
         gehaeuse_comboBox.addActionListener(e -> gehaeusePreisChange()); //ist kurzschreibweise für (ActionEvent e) -> { updateLabel(); }
         cpu_comboBox.addActionListener(e -> cpuPreisChange());
@@ -83,7 +75,8 @@ public class Konfigurator extends JFrame{
         cpuCooler_comboBox.addActionListener(e -> cpuCoolerPreisChange());
         memory_comboBox.addActionListener(e -> memoryPreisChange());
         psu_comboBox.addActionListener(e -> psuPreisChange());
-        speichern_button.addActionListener(e -> speichern());
+
+        speichern_button.addActionListener(e -> controller.speichern());
     }
 
 
@@ -301,22 +294,6 @@ public class Konfigurator extends JFrame{
         preisSumme_label.setText(gesPreis + "€");
     }
 
-
-    //alle Werte auslesen und speichern und Objekt erstellen
-    private void speichern(){
-        gehaeuse = gehaeuse_comboBox.getSelectedItem().toString();
-        cpu = cpu_comboBox.getSelectedItem().toString();
-        gpu = gpu_comboBox.getSelectedItem().toString();
-        ram = ram_comboBox.getSelectedItem().toString();
-        motherboard = motherboard_comboBox.getSelectedItem().toString();
-        cpuCooler = cpuCooler_comboBox.getSelectedItem().toString();
-        memory = memory_comboBox.getSelectedItem().toString();
-        psu = psu_comboBox.getSelectedItem().toString();
-
-        PC pc = new PC(gehaeuse, cpu, gpu, ram, motherboard, cpuCooler, memory, psu);
-        // Ausgabe in der Konsole
-        System.out.println(pc);
-    }
 }
 
 
