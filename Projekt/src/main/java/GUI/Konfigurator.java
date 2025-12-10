@@ -294,6 +294,10 @@ public class Konfigurator extends JFrame{
         preisSumme_label.setText(gesPreis + "€");
     }
 
+    //getter
+    public double getGesPreis(){
+        return gesPreis;
+    }
 }
 
 
