@@ -11,7 +11,7 @@ public class Controller {
     // Referenz auf die GUI-Instanz, damit der Controller auf die Komponenten zugreifen kann
     private Konfigurator gui;
 
-    private Map<String, PC> pcMap = new HashMap<>();    //erstellt Liste der PCs
+    Map<String, PC> pcMap = new HashMap<>();    //erstellt Liste der PCs
     private int pcCounter = 0;
 
     // Konstruktor: bekommt die GUI übergeben und speichert sie in der Instanzvariable
@@ -42,35 +42,16 @@ public class Controller {
     }
 
     //Sortierung nach größter gesPreis
-    public void sortGgesPreis(){
-        List<PC> sortiert = pcMap.values().stream()
+    public List<PC> sortGgesPreis(){
+        return pcMap.values().stream()
                 .sorted(Comparator.comparingDouble(PC::getGesPreis).reversed())
                 .collect(Collectors.toList());
-
-        //gibt die sortierte Liste aus (nur zum Test)
-        for (PC pc : sortiert) {
-            System.out.println(pc);
-        }
     }
 
     //Sortierung nach kleinster gesPreis
-    public void sortKgesPreis(){
-        List<PC> sortiert = pcMap.values().stream()
+    public List<PC> sortKgesPreis(){
+        return pcMap.values().stream()
                 .sorted(Comparator.comparingDouble(PC::getGesPreis))
                 .collect(Collectors.toList());
-
-        //gibt die sortierte Liste aus (nur zum Test)
-        for (PC pc : sortiert) {
-            System.out.println(pc);
-        }
-    }
-
-    //Testausgaben für PC-Listen
-    public void test(){
-        for (Map.Entry<String, PC> eintrag : pcMap.entrySet()) {
-            System.out.println(eintrag.getKey() + " -> " + eintrag.getValue());
-        }
-        System.out.println("--------------------");
-        sortKgesPreis();
     }
 }
