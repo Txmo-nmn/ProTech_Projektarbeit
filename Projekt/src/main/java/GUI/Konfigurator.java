@@ -298,4 +298,9 @@ public class Konfigurator extends JFrame {
                 cpuCoolerPreis + memoryPreis + psuPreis;
         preisSumme_label.setText(gesPreis + "€");
     }
+
+    //getter
+    public double getGesPreis(){
+        return gesPreis;
+    }
 }
