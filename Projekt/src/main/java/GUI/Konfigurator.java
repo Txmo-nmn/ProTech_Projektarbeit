@@ -15,14 +15,14 @@ public class Konfigurator extends JFrame{
     private JLabel gesamtpreis_label;
 
     //Componentauswahl:
-    private JComboBox gehaeuse_comboBox;
-    private JComboBox cpu_comboBox;
-    private JComboBox gpu_comboBox;
-    private JComboBox ram_comboBox;
-    private JComboBox motherboard_comboBox;
-    private JComboBox cpuCooler_comboBox;
-    private JComboBox memory_comboBox;
-    private JComboBox psu_comboBox;
+    public JComboBox gehaeuse_comboBox;
+    public JComboBox cpu_comboBox;
+    public JComboBox gpu_comboBox;
+    public JComboBox ram_comboBox;
+    public JComboBox motherboard_comboBox;
+    public JComboBox cpuCooler_comboBox;
+    public JComboBox memory_comboBox;
+    public JComboBox psu_comboBox;
 
     //Componentpreise:
     private JLabel gehaeusePreis_label;
@@ -64,6 +64,8 @@ public class Konfigurator extends JFrame{
         setVisible(true);
         reset();
 
+        Controller controller = new Controller(this);       //erstellt ein Controller object (muss maybe dann bei der startgui eingfügt und hier gelöscht werden)
+
         //updatet PreisLabels
         gehaeuse_comboBox.addActionListener(e -> gehaeusePreisChange()); //ist kurzschreibweise für (ActionEvent e) -> { updateLabel(); }
         cpu_comboBox.addActionListener(e -> cpuPreisChange());
@@ -73,6 +75,8 @@ public class Konfigurator extends JFrame{
         cpuCooler_comboBox.addActionListener(e -> cpuCoolerPreisChange());
         memory_comboBox.addActionListener(e -> memoryPreisChange());
         psu_comboBox.addActionListener(e -> psuPreisChange());
+
+        speichern_button.addActionListener(e -> controller.speichern());
     }
 
 
@@ -289,6 +293,7 @@ public class Konfigurator extends JFrame{
         gesPreis = gehaeusePreis + cpuPreis + gpuPreis + ramPreis + motherboardPreis + cpuCoolerPreis + memoryPreis + psuPreis;
         preisSumme_label.setText(gesPreis + "€");
     }
+
 }
 
 
