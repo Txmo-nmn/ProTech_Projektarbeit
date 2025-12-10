@@ -9,9 +9,10 @@ public class PC {
     private String cpuCooler;
     private String memory;
     private String psu;
+    private double gesPreis;
 
     //Constructor
-    public PC(String gehaeuse, String cpu, String gpu, String ram, String motherboard, String cpuCooler, String memory, String psu) {
+    public PC(String gehaeuse, String cpu, String gpu, String ram, String motherboard, String cpuCooler, String memory, String psu, double gesPreis) {
         this.gehaeuse = gehaeuse;
         this.cpu = cpu;
         this.gpu = gpu;
@@ -20,10 +21,12 @@ public class PC {
         this.cpuCooler = cpuCooler;
         this.memory = memory;
         this.psu = psu;
+        this.gesPreis = gesPreis;
     }
 
-    public static void main(String[] args) {
-
+    //getter
+    public double getGesPreis(){
+        return gesPreis;
     }
 
     //gibt objekt auf Konsole aus (zum Test)
@@ -38,6 +41,7 @@ public class PC {
                 ", CPU Cooler='" + cpuCooler + '\'' +
                 ", Memory='" + memory + '\'' +
                 ", PSU='" + psu + '\'' +
+                ", gesPreis='" + gesPreis + '\'' +
                 '}';
     }
 }

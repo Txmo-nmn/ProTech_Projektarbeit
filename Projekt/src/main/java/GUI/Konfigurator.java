@@ -38,6 +38,7 @@ public class Konfigurator extends JFrame{
     private JButton speichern_button;
     private JLabel konfigurationen_label;
     private JPanel main_Panel;
+    private JButton test;
 
     //Preisberechnung
     private double gehaeusePreis;
@@ -77,6 +78,7 @@ public class Konfigurator extends JFrame{
         psu_comboBox.addActionListener(e -> psuPreisChange());
 
         speichern_button.addActionListener(e -> controller.speichern());
+        test.addActionListener(e ->controller.test()); //wird zum testen der Liste verwendent und kann danach wieder gelöscht werden
     }
 
 
@@ -294,6 +296,10 @@ public class Konfigurator extends JFrame{
         preisSumme_label.setText(gesPreis + "€");
     }
 
+    //getter
+    public double getGesPreis(){
+        return gesPreis;
+    }
 }
 
 

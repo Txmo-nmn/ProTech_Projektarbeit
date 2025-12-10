@@ -1,7 +1,10 @@
 package GUI;
 
+import java.util.Comparator;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 public class Controller {
 
@@ -26,8 +29,9 @@ public class Controller {
         String cpuCooler = gui.cpuCooler_comboBox.getSelectedItem().toString();
         String memory = gui.memory_comboBox.getSelectedItem().toString();
         String psu = gui.psu_comboBox.getSelectedItem().toString();
+        double gespreis = gui.getGesPreis();
 
-        PC pc = new PC(gehaeuse, cpu, gpu, ram, motherboard, cpuCooler, memory, psu);   //neues PC Objekt erstellen
+        PC pc = new PC(gehaeuse, cpu, gpu, ram, motherboard, cpuCooler, memory, psu, gespreis);   //neues PC Objekt erstellen
 
         pcCounter++;
         String key = "pc" + pcCounter;
@@ -35,5 +39,25 @@ public class Controller {
 
         //Ausgabe in Konsole (zum Test)
         System.out.println(key + ": " + pc);
+    }
+
+    //Sortierung nach größter gesPreis
+    public void sortGgesPreis(){
+        List<PC> sortiert = pcMap.values().stream()
+                .sorted(Comparator.comparingDouble(PC::getGesPreis).reversed())
+                .collect(Collectors.toList());
+
+        //gibt die sortierte Liste aus (nur zum Test)
+        for (PC pc : sortiert) {
+            System.out.println(pc);
+        }
+    }
+
+    public void test(){
+        for (Map.Entry<String, PC> eintrag : pcMap.entrySet()) {
+            System.out.println(eintrag.getKey() + " -> " + eintrag.getValue());
+        }
+        System.out.println("--------------------");
+        sortGgesPreis();
     }
 }
