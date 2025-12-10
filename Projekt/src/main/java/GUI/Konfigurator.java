@@ -2,7 +2,7 @@ package GUI;
 
 import javax.swing.*;
 
-public class Konfigurator extends JFrame{
+public class Konfigurator extends JFrame {
     private JLabel title_label;
     private JLabel gehaeuse_label;
     private JLabel cpu_label;
@@ -14,7 +14,7 @@ public class Konfigurator extends JFrame{
     private JLabel cpuCooler_label;
     private JLabel gesamtpreis_label;
 
-    //Componentauswahl:
+    // Componentauswahl:
     public JComboBox gehaeuse_comboBox;
     public JComboBox cpu_comboBox;
     public JComboBox gpu_comboBox;
@@ -24,7 +24,7 @@ public class Konfigurator extends JFrame{
     public JComboBox memory_comboBox;
     public JComboBox psu_comboBox;
 
-    //Componentpreise:
+    // Componentpreise:
     private JLabel gehaeusePreis_label;
     private JLabel cpuPreis_label;
     private JLabel gpuPreis_label;
@@ -39,7 +39,7 @@ public class Konfigurator extends JFrame{
     private JLabel konfigurationen_label;
     private JPanel main_Panel;
 
-    //Preisberechnung
+    // Preisberechnung
     private double gehaeusePreis;
     private double cpuPreis;
     private double gpuPreis;
@@ -50,24 +50,31 @@ public class Konfigurator extends JFrame{
     private double psuPreis;
     private double gesPreis;
 
-
     public static void main(String[] args) {
-        new Konfigurator();
+        SwingUtilities.invokeLater(Konfigurator::new);
     }
 
-
     public Konfigurator() {
-        setTitle("Farben Fenster");
+        setTitle("PC Konfigurator");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(700, 500);
+
+        // Panel aus der .form verwenden
         setContentPane(main_Panel);
+
+        // Layout berechnen
+        pack();
+
+        // --- Vollbild-Einstellungen ---
+        setExtendedState(JFrame.MAXIMIZED_BOTH); // maximiert auf gesamten Bildschirm
         setVisible(true);
+        // -------------------------------
+
         reset();
 
-        Controller controller = new Controller(this);       //erstellt ein Controller object (muss maybe dann bei der startgui eingfügt und hier gelöscht werden)
+        Controller controller = new Controller(this);
 
-        //updatet PreisLabels
-        gehaeuse_comboBox.addActionListener(e -> gehaeusePreisChange()); //ist kurzschreibweise für (ActionEvent e) -> { updateLabel(); }
+        // updatet PreisLabels
+        gehaeuse_comboBox.addActionListener(e -> gehaeusePreisChange());
         cpu_comboBox.addActionListener(e -> cpuPreisChange());
         gpu_comboBox.addActionListener(e -> gpuPreisChange());
         ram_comboBox.addActionListener(e -> ramPreisChange());
@@ -79,9 +86,8 @@ public class Konfigurator extends JFrame{
         speichern_button.addActionListener(e -> controller.speichern());
     }
 
-
-    //setzt am Anfang alles aus standard s
-    private void reset(){
+    // setzt am Anfang alles auf Standard
+    private void reset() {
         gehaeusePreis_label.setText("-");
         cpuPreis_label.setText("-");
         gpuPreis_label.setText("-");
@@ -93,11 +99,10 @@ public class Konfigurator extends JFrame{
         preisSumme_label.setText("0€");
     }
 
-
-    //setzt Preise je nachdem was ausgewählt wird
-    private void gehaeusePreisChange(){
+    // ab hier alles wie gehabt …
+    private void gehaeusePreisChange() {
         String gehaeuse = gehaeuse_comboBox.getSelectedItem().toString();
-        switch (gehaeuse){
+        switch (gehaeuse) {
             case "Gehäuse 1":
                 gehaeusePreis_label.setText("50€");
                 gehaeusePreis = 50;
@@ -117,9 +122,9 @@ public class Konfigurator extends JFrame{
         gesamtpreisRechner();
     }
 
-    private void cpuPreisChange(){
+    private void cpuPreisChange() {
         String cpu = cpu_comboBox.getSelectedItem().toString();
-        switch (cpu){
+        switch (cpu) {
             case "CPU 1":
                 cpuPreis_label.setText("50€");
                 cpuPreis = 50;
@@ -139,9 +144,9 @@ public class Konfigurator extends JFrame{
         gesamtpreisRechner();
     }
 
-    private void gpuPreisChange(){
+    private void gpuPreisChange() {
         String gpu = gpu_comboBox.getSelectedItem().toString();
-        switch (gpu){
+        switch (gpu) {
             case "GPU 1":
                 gpuPreis_label.setText("50€");
                 gpuPreis = 50;
@@ -161,9 +166,9 @@ public class Konfigurator extends JFrame{
         gesamtpreisRechner();
     }
 
-    private void ramPreisChange(){
+    private void ramPreisChange() {
         String ram = ram_comboBox.getSelectedItem().toString();
-        switch (ram){
+        switch (ram) {
             case "RAM 1":
                 ramPreis_label.setText("50€");
                 ramPreis = 50;
@@ -183,9 +188,9 @@ public class Konfigurator extends JFrame{
         gesamtpreisRechner();
     }
 
-    private void motherboardPreisChange(){
+    private void motherboardPreisChange() {
         String motherboard = motherboard_comboBox.getSelectedItem().toString();
-        switch (motherboard){
+        switch (motherboard) {
             case "Motherboard 1":
                 motherboardPreis_label.setText("50€");
                 motherboardPreis = 50;
@@ -205,9 +210,9 @@ public class Konfigurator extends JFrame{
         gesamtpreisRechner();
     }
 
-    private void cpuCoolerPreisChange(){
+    private void cpuCoolerPreisChange() {
         String cpuCooler = cpuCooler_comboBox.getSelectedItem().toString();
-        switch (cpuCooler){
+        switch (cpuCooler) {
             case "CPU Cooler 1":
                 cpuCoolerPreis_label.setText("50€");
                 cpuCoolerPreis = 50;
@@ -227,9 +232,9 @@ public class Konfigurator extends JFrame{
         gesamtpreisRechner();
     }
 
-    private void memoryPreisChange(){
+    private void memoryPreisChange() {
         String memory = memory_comboBox.getSelectedItem().toString();
-        switch (memory){
+        switch (memory) {
             case "SSD 1":
                 memoryPreis_label.setText("50€");
                 memoryPreis = 50;
@@ -265,9 +270,9 @@ public class Konfigurator extends JFrame{
         gesamtpreisRechner();
     }
 
-    private void psuPreisChange(){
+    private void psuPreisChange() {
         String psu = psu_comboBox.getSelectedItem().toString();
-        switch (psu){
+        switch (psu) {
             case "PSU 1":
                 psuPreis_label.setText("50€");
                 psuPreis = 50;
@@ -287,13 +292,10 @@ public class Konfigurator extends JFrame{
         gesamtpreisRechner();
     }
 
-
-    //berechnet und setzt den Gesamtpreis
-    private void gesamtpreisRechner(){
-        gesPreis = gehaeusePreis + cpuPreis + gpuPreis + ramPreis + motherboardPreis + cpuCoolerPreis + memoryPreis + psuPreis;
+    // berechnet und setzt den Gesamtpreis
+    private void gesamtpreisRechner() {
+        gesPreis = gehaeusePreis + cpuPreis + gpuPreis + ramPreis + motherboardPreis +
+                cpuCoolerPreis + memoryPreis + psuPreis;
         preisSumme_label.setText(gesPreis + "€");
     }
-
 }
-
-
