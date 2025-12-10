@@ -53,11 +53,24 @@ public class Controller {
         }
     }
 
+    //Sortierung nach kleinster gesPreis
+    public void sortKgesPreis(){
+        List<PC> sortiert = pcMap.values().stream()
+                .sorted(Comparator.comparingDouble(PC::getGesPreis))
+                .collect(Collectors.toList());
+
+        //gibt die sortierte Liste aus (nur zum Test)
+        for (PC pc : sortiert) {
+            System.out.println(pc);
+        }
+    }
+
+    //Testausgaben für PC-Listen
     public void test(){
         for (Map.Entry<String, PC> eintrag : pcMap.entrySet()) {
             System.out.println(eintrag.getKey() + " -> " + eintrag.getValue());
         }
         System.out.println("--------------------");
-        sortGgesPreis();
+        sortKgesPreis();
     }
 }
