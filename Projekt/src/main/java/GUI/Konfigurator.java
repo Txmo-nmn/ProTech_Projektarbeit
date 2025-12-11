@@ -65,8 +65,6 @@ public class Konfigurator extends JFrame {
 
         // --- Vollbild-Einstellungen ---
         setExtendedState(JFrame.MAXIMIZED_BOTH);    // maximiert auf gesamten Bildschirm
-        setUndecorated(true);
-        setVisible(true);
         // -------------------------------
 
         reset();
@@ -81,7 +79,10 @@ public class Konfigurator extends JFrame {
         memory_comboBox.addActionListener(e -> memoryPreisChange());
         psu_comboBox.addActionListener(e -> psuPreisChange());
 
-        speichern_button.addActionListener(e -> controller.speichern(this));
+        speichern_button.addActionListener(e -> {controller.speichern(this);
+            dispose();
+            controller.showStartingpage();
+        });
     }
 
     // setzt am Anfang alles auf Standard

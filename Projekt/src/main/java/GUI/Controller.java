@@ -11,6 +11,7 @@ public class Controller {
     // Referenz auf die GUI-Instanz, damit der Controller auf die Komponenten zugreifen kann
     private Startingpage startingpage;
     private Konfigurator konfigurator;
+    private SavedConfigsScreen savedConfigsScreen;
 
     Map<String, PC> pcMap = new HashMap<>();    //erstellt Liste der PCs
     private int pcCounter = 0;
@@ -44,6 +45,11 @@ public class Controller {
         konfigurator.setVisible(true);
     }
 
+    public void openSavedConfigsScreen(){
+        savedConfigsScreen = new SavedConfigsScreen(this);
+        savedConfigsScreen.setVisible(true);
+    }
+
     //alle Werte auslesen und speichern und Objekt erstellen
     public void speichern(Konfigurator gui){
         String gehaeuse = gui.gehaeuse_comboBox.getSelectedItem().toString();
@@ -54,9 +60,9 @@ public class Controller {
         String cpuCooler = gui.cpuCooler_comboBox.getSelectedItem().toString();
         String memory = gui.memory_comboBox.getSelectedItem().toString();
         String psu = gui.psu_comboBox.getSelectedItem().toString();
-        double gespreis = gui.getGesPreis();
+        double gesPreis = gui.getGesPreis();
 
-        PC pc = new PC(gehaeuse, cpu, gpu, ram, motherboard, cpuCooler, memory, psu, gespreis);   //neues PC Objekt erstellen
+        PC pc = new PC(gehaeuse, cpu, gpu, ram, motherboard, cpuCooler, memory, psu, gesPreis);   //neues PC Objekt erstellen
 
         pcCounter++;
         String key = "pc" + pcCounter;
