@@ -28,7 +28,7 @@
               </grid>
             </constraints>
             <properties>
-              <icon value="GUI/Frame 1.png"/>
+              <icon value="GUI/Frame1.png"/>
               <text value=""/>
             </properties>
           </component>
