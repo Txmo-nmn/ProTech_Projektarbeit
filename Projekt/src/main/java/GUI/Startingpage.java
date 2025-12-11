@@ -42,7 +42,12 @@ public class Startingpage extends JFrame {
             dispose();  // Startingpage schließen
         });
 
-        // button_SavedConfigs kannst du später noch befüllen
+        button_SavedConfigs.addActionListener(e -> {
+            dispose();
+            SavedConfigsScreen savedScreen = new SavedConfigsScreen();
+            savedScreen.setExtendedState(JFrame.MAXIMIZED_BOTH);
+            savedScreen.setVisible(true);
+        });
     }
 
     public static void main(String[] args) {
