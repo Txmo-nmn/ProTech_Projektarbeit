@@ -1,11 +1,13 @@
 package GUI;
 
 import javax.swing.*;
+import java.util.List;
 
 public class SavedConfigsScreen extends JFrame{
     private JPanel panel1;
     private JButton buttonBack;
     private JTable objektAusgabe_table;
+    public JComboBox sortPreis_comboBox;
     private Controller controller;
 
     public SavedConfigsScreen(Controller controller) {
@@ -15,18 +17,16 @@ public class SavedConfigsScreen extends JFrame{
         pack();
         setExtendedState(JFrame.MAXIMIZED_BOTH);
 
+        showList(controller.unsortList());
+
+        sortPreis_comboBox.addActionListener(e -> changeListByPreis());
         buttonBack.addActionListener(e -> {
             dispose();
             controller.showStartingpage();
         });
-
-        showList();
     }
 
-    private void showList(){
-        // Liste aus Controller holen
-        var pcs = controller.sortGgesPreis();
-
+    private void showList(List<PC> pcs){
         // Spaltenüberschriften
         String[] columnNames = {
                 "Gehäuse", "CPU", "GPU", "RAM",
@@ -57,8 +57,25 @@ public class SavedConfigsScreen extends JFrame{
 
         // Optional: Sortierfunktion aktivieren
         objektAusgabe_table.setAutoCreateRowSorter(true);
-
         objektAusgabe_table.setRowHeight(28);
         objektAusgabe_table.setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);
+    }
+
+    //schaut was der Benutzer bei der Preissortierung ausgewählt hat
+    public void changeListByPreis(){
+        String sort = sortPreis_comboBox.getSelectedItem().toString();
+        switch (sort) {
+            case "-":
+                showList(controller.unsortList());
+                break;
+            case "Preis sinkend":
+                showList(controller.sortGgesPreis());
+                break;
+            case "Preis aufsteigend":
+                showList(controller.sortKgesPreis());
+                break;
+            default:
+                showList(controller.unsortList());
+        }
     }
 }

@@ -86,6 +86,12 @@ public class Controller {
                 .collect(Collectors.toList());
     }
 
+    //gib einfach alle PC objekte als Liste zurück
+    public List<PC> unsortList(){
+        return pcMap.values().stream()
+                .toList();
+    }
+
     //3 Objecte erstellen
     public void initObjekte(){
         PC pc1 = new PC("Gehäuse 1", "CPU 1", "GPU 1", "RAM 1",
