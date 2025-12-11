@@ -1,6 +1,7 @@
 package GUI;
 
 import javax.swing.*;
+import java.awt.*;
 
 public class Startingpage extends JFrame {
 
@@ -8,8 +9,10 @@ public class Startingpage extends JFrame {
     private JPanel Startingpage;
     private JButton button_AddConfig;
     private JButton button_SavedConfigs;
+    private Controller controller;
 
-    public Startingpage() {
+    public Startingpage(Controller controller) {
+        this.controller = controller;
         // Root-Panel aus der .form als Inhalt setzen
         setContentPane(panel1);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -28,24 +31,11 @@ public class Startingpage extends JFrame {
         button_SavedConfigs.setContentAreaFilled(false);
         button_SavedConfigs.setOpaque(false);
 
-
-
         // Button "Add Config" öffnet den Konfigurator
-        button_AddConfig.addActionListener(e -> {
-            Konfigurator konfigurator = new Konfigurator();
-
-            // Optional: Konfigurator auch im Vollbild öffnen
-            konfigurator.setExtendedState(JFrame.MAXIMIZED_BOTH);
-            konfigurator.setUndecorated(true);
-            konfigurator.setVisible(true);
-
+        button_AddConfig.addActionListener(e -> {controller.openKonfigurator();
             dispose();  // Startingpage schließen
         });
 
         // button_SavedConfigs kannst du später noch befüllen
-    }
-
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> new Startingpage());
     }
 }

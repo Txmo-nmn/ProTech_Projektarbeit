@@ -11,7 +11,7 @@ public class ControllerTest {
 
     @BeforeEach
     public void setupPcHasMap() {
-        controller = new Controller(null);
+        controller = new Controller(false);
 
         pc1 = new PC("Gehäuse 1", "CPU 1", "GPU 1", "RAM 1",
                 "Motherboard 1", "CPU Cooler 1", "SSD 1", "PSU 1", 1000);
@@ -20,9 +20,10 @@ public class ControllerTest {
         pc3 = new PC("Gehäuse 3", "CPU 3", "GPU 3", "RAM 3",
                 "Motherboard 3", "CPU Cooler 3", "SSD 3", "PSU 3", 1500);
 
-        controller.pcMap.put("pc1", pc1);
-        controller.pcMap.put("pc2", pc2);
-        controller.pcMap.put("pc3", pc3);
+        controller.getPcMap().clear();
+        controller.getPcMap().put("pc1", pc1);
+        controller.getPcMap().put("pc2", pc2);
+        controller.getPcMap().put("pc3", pc3);
     }
 
     @Test

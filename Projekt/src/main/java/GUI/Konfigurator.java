@@ -50,11 +50,10 @@ public class Konfigurator extends JFrame {
     private double psuPreis;
     private double gesPreis;
 
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(Konfigurator::new);
-    }
+    private Controller controller;
 
-    public Konfigurator() {
+    public Konfigurator(Controller controller) {
+        this.controller = controller;
         setTitle("PC Konfigurator");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
@@ -65,13 +64,12 @@ public class Konfigurator extends JFrame {
         pack();
 
         // --- Vollbild-Einstellungen ---
-        setExtendedState(JFrame.MAXIMIZED_BOTH); // maximiert auf gesamten Bildschirm
+        setExtendedState(JFrame.MAXIMIZED_BOTH);    // maximiert auf gesamten Bildschirm
+        setUndecorated(true);
         setVisible(true);
         // -------------------------------
 
         reset();
-
-        Controller controller = new Controller(this);
 
         // updatet PreisLabels
         gehaeuse_comboBox.addActionListener(e -> gehaeusePreisChange());
@@ -83,7 +81,7 @@ public class Konfigurator extends JFrame {
         memory_comboBox.addActionListener(e -> memoryPreisChange());
         psu_comboBox.addActionListener(e -> psuPreisChange());
 
-        speichern_button.addActionListener(e -> controller.speichern());
+        speichern_button.addActionListener(e -> controller.speichern(this));
     }
 
     // setzt am Anfang alles auf Standard
