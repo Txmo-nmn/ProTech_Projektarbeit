@@ -24,12 +24,6 @@ public class PC {
         this.gesPreis = gesPreis;
     }
 
-    //getter
-    public double getGesPreis(){
-        return gesPreis;
-    }
-
-    //gibt objekt auf Konsole aus (zum Test)
     @Override
     public String toString() {
         return "PC{" +
@@ -43,6 +37,43 @@ public class PC {
                 ", PSU='" + psu + '\'' +
                 ", gesPreis='" + gesPreis + '\'' +
                 '}';
+    }
+
+    //getter
+    public String getGehaeuse() {
+        return gehaeuse;
+    }
+
+    public String getCpu() {
+        return cpu;
+    }
+
+    public String getGpu() {
+        return gpu;
+    }
+
+    public String getRam() {
+        return ram;
+    }
+
+    public String getMotherboard() {
+        return motherboard;
+    }
+
+    public String getCpuCooler() {
+        return cpuCooler;
+    }
+
+    public String getMemory() {
+        return memory;
+    }
+
+    public String getPsu() {
+        return psu;
+    }
+
+    public double getGesPreis() {
+        return gesPreis;
     }
 }
 

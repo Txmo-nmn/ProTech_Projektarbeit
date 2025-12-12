@@ -38,9 +38,7 @@ public class Startingpage extends JFrame {
 
         button_SavedConfigs.addActionListener(e -> {
             dispose();
-            SavedConfigsScreen savedScreen = new SavedConfigsScreen();
-            savedScreen.setExtendedState(JFrame.MAXIMIZED_BOTH);
-            savedScreen.setVisible(true);
+            controller.openSavedConfigsScreen();
         });
     }
 }
