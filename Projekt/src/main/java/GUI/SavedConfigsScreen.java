@@ -60,7 +60,7 @@ public class SavedConfigsScreen extends JFrame{
     private void showList(List<PC> pcs){
         // Spaltenüberschriften
         String[] columnNames = {
-                "Gehäuse", "CPU", "GPU", "RAM",
+                "Name","Gehäuse", "CPU", "GPU", "RAM",
                 "Motherboard", "Kühler", "Speicher", "Netzteil", "Preis"
         };
 
@@ -69,15 +69,16 @@ public class SavedConfigsScreen extends JFrame{
 
         for (int i = 0; i < pcs.size(); i++) {
             PC pc = pcs.get(i);
-            data[i][0] = pc.getGehaeuse();
-            data[i][1] = pc.getCpu();
-            data[i][2] = pc.getGpu();
-            data[i][3] = pc.getRam();
-            data[i][4] = pc.getMotherboard();
-            data[i][5] = pc.getCpuCooler();
-            data[i][6] = pc.getMemory();
-            data[i][7] = pc.getPsu();
-            data[i][8] = pc.getGesPreis();
+            data[i][0] = pc.getName();
+            data[i][1] = pc.getGehaeuse();
+            data[i][2] = pc.getCpu();
+            data[i][3] = pc.getGpu();
+            data[i][4] = pc.getRam();
+            data[i][5] = pc.getMotherboard();
+            data[i][6] = pc.getCpuCooler();
+            data[i][7] = pc.getMemory();
+            data[i][8] = pc.getPsu();
+            data[i][9] = pc.getGesPreis();
         }
 
         // Model erstellen und der vorhandenen JTable zuweisen

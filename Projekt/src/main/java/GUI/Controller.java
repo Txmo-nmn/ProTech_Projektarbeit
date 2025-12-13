@@ -52,6 +52,12 @@ public class Controller {
 
     //alle Werte auslesen und speichern und Objekt erstellen
     public void speichern(Konfigurator gui){
+        pcCounter++;
+        int nummer = pcCounter;
+        String name = gui.name_textField.getText();
+        if(name.isEmpty()){
+            name = "Konfiguration" + nummer;
+        }
         String gehaeuse = gui.gehaeuse_comboBox.getSelectedItem().toString();
         String cpu = gui.cpu_comboBox.getSelectedItem().toString();
         String gpu = gui.gpu_comboBox.getSelectedItem().toString();
@@ -62,9 +68,8 @@ public class Controller {
         String psu = gui.psu_comboBox.getSelectedItem().toString();
         double gesPreis = gui.getGesPreis();
 
-        PC pc = new PC(gehaeuse, cpu, gpu, ram, motherboard, cpuCooler, memory, psu, gesPreis);   //neues PC Objekt erstellen
+        PC pc = new PC(name, gehaeuse, cpu, gpu, ram, motherboard, cpuCooler, memory, psu, gesPreis, nummer);   //neues PC Objekt erstellen
 
-        pcCounter++;
         String key = "pc" + pcCounter;
         pcMap.put(key, pc);
 
@@ -89,8 +94,11 @@ public class Controller {
     //gib einfach alle PC objekte als Liste zurück
     public List<PC> unsortList(){
         return pcMap.values().stream()
-                .toList();
+                .sorted(Comparator.comparingDouble(PC::getNummer).reversed())
+                .collect(Collectors.toList());
     }
+
+    //gib nur die Objekte aus die unter/gleich des max Preises sind
     public List<PC> presiList(double preis){
         return pcMap.values().stream()
                 .filter(pc -> pc.getGesPreis() <= preis) // nur PCs unter/gleich Preis
@@ -99,12 +107,12 @@ public class Controller {
 
     //3 Objecte erstellen
     public void initObjekte(){
-        PC pc1 = new PC("Gehäuse 1", "CPU 1", "GPU 1", "RAM 1",
-                "Motherboard 1", "CPU Cooler 1", "SSD 1", "PSU 1", 400);
-        PC pc2 = new PC("Gehäuse 2", "CPU 2", "GPU 2", "RAM 2",
-                "Motherboard 2", "CPU Cooler 2", "SSD 2", "PSU 2", 640);
-        PC pc3 = new PC("Gehäuse 3", "CPU 3", "GPU 3", "RAM 3",
-                "Motherboard 3", "CPU Cooler 3", "SSD 3", "PSU 3", 800);
+        PC pc1 = new PC("Konfiguration 1","Gehäuse 1", "CPU 1", "GPU 1", "RAM 1",
+                "Motherboard 1", "CPU Cooler 1", "SSD 1", "PSU 1", 400,1);
+        PC pc2 = new PC("Konfiguration 1","Gehäuse 2", "CPU 2", "GPU 2", "RAM 2",
+                "Motherboard 2", "CPU Cooler 2", "SSD 2", "PSU 2", 640,2);
+        PC pc3 = new PC("Konfiguration 3","Gehäuse 3", "CPU 3", "GPU 3", "RAM 3",
+                "Motherboard 3", "CPU Cooler 3", "SSD 3", "PSU 3", 800,3);
 
         // automatische Nummerierung
         pcCounter++;

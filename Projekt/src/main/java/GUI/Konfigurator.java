@@ -34,10 +34,10 @@ public class Konfigurator extends JFrame {
     private JLabel memoryPreis_label;
     private JLabel psuPreis_label;
     private JLabel preisSumme_label;
-    private JTextArea konfigurationen_textArea;
     private JButton speichern_button;
     private JLabel konfigurationen_label;
     private JPanel main_Panel;
+    public JTextField name_textField;
 
     // Preisberechnung
     private double gehaeusePreis;
