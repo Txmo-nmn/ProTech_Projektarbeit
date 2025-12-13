@@ -8,6 +8,8 @@ public class SavedConfigsScreen extends JFrame{
     private JButton buttonBack;
     private JTable objektAusgabe_table;
     public JComboBox sortPreis_comboBox;
+    private JTextField preis_textField;
+    private JLabel filterName_Label;
     private Controller controller;
 
     public SavedConfigsScreen(Controller controller) {
@@ -23,6 +25,12 @@ public class SavedConfigsScreen extends JFrame{
         buttonBack.addActionListener(e -> {
             dispose();
             controller.showStartingpage();
+        });
+
+        preis_textField.addActionListener(e->{
+            String preisEingabe = preis_textField.getText();
+            double preis = Double.parseDouble(preisEingabe);
+            showList(controller.presiList(preis));
         });
     }
 
