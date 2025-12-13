@@ -28,9 +28,32 @@ public class SavedConfigsScreen extends JFrame{
         });
 
         preis_textField.addActionListener(e->{
-            String preisEingabe = preis_textField.getText();
-            double preis = Double.parseDouble(preisEingabe);
-            showList(controller.presiList(preis));
+            //Fehlerbehandlung
+            try {
+                String preisEingabe = preis_textField.getText().trim(); //trim entfernt leerzeichen
+
+                //wirft Fehler bei leerem Textfeld
+                if (preisEingabe.isEmpty()) {
+                    throw new NumberFormatException("Leer");
+                }
+                //dadurch kann man auch Kommas eingeben
+                preisEingabe = preisEingabe.replace(',', '.');
+                double preis = Double.parseDouble(preisEingabe);
+
+                //gültige Eingabe -> Liste anzeigen
+                showList(controller.presiList(preis));
+            }
+            catch (NumberFormatException ex) {
+                JOptionPane.showMessageDialog(
+                    this,
+                    "Bitte eine gültige Zahl eingeben!\nBeispiel: 999.99",
+                    "Ungültige Eingabe",
+                    JOptionPane.ERROR_MESSAGE
+                );
+
+                //Feld leeren
+                preis_textField.setText("");
+            }
         });
     }
 
