@@ -8,6 +8,8 @@ public class SavedConfigsScreen extends JFrame{
     private JButton buttonBack;
     private JTable objektAusgabe_table;
     public JComboBox sortPreis_comboBox;
+    private JTextField preis_textField;
+    private JLabel filterName_Label;
     private Controller controller;
 
     public SavedConfigsScreen(Controller controller) {
@@ -23,6 +25,35 @@ public class SavedConfigsScreen extends JFrame{
         buttonBack.addActionListener(e -> {
             dispose();
             controller.showStartingpage();
+        });
+
+        preis_textField.addActionListener(e->{
+            //Fehlerbehandlung
+            try {
+                String preisEingabe = preis_textField.getText().trim(); //trim entfernt leerzeichen
+
+                //wirft Fehler bei leerem Textfeld
+                if (preisEingabe.isEmpty()) {
+                    throw new NumberFormatException("Leer");
+                }
+                //dadurch kann man auch Kommas eingeben
+                preisEingabe = preisEingabe.replace(',', '.');
+                double preis = Double.parseDouble(preisEingabe);
+
+                //gültige Eingabe -> Liste anzeigen
+                showList(controller.presiList(preis));
+            }
+            catch (NumberFormatException ex) {
+                JOptionPane.showMessageDialog(
+                    this,
+                    "Bitte eine gültige Zahl eingeben!\nBeispiel: 999.99",
+                    "Ungültige Eingabe",
+                    JOptionPane.ERROR_MESSAGE
+                );
+
+                //Feld leeren
+                preis_textField.setText("");
+            }
         });
     }
 

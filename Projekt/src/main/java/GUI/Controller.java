@@ -91,6 +91,11 @@ public class Controller {
         return pcMap.values().stream()
                 .toList();
     }
+    public List<PC> presiList(double preis){
+        return pcMap.values().stream()
+                .filter(pc -> pc.getGesPreis() <= preis) // nur PCs unter/gleich Preis
+                .collect(Collectors.toList());
+    }
 
     //3 Objecte erstellen
     public void initObjekte(){
