@@ -1,6 +1,8 @@
 package GUI;
 
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class Konfigurator extends JFrame {
     private JLabel title_label;
@@ -38,6 +40,7 @@ public class Konfigurator extends JFrame {
     private JLabel konfigurationen_label;
     private JPanel main_Panel;
     public JTextField name_textField;
+    private JButton zurückButton;
 
     // Preisberechnung
     private double gehaeusePreis;
@@ -82,6 +85,12 @@ public class Konfigurator extends JFrame {
         speichern_button.addActionListener(e -> {controller.speichern(this);
             dispose();
             controller.showStartingpage();
+        });
+        zurückButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                controller.showStartingpage();
+            }
         });
     }
 

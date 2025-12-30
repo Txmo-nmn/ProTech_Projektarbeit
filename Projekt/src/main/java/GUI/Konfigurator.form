@@ -6,8 +6,8 @@
       <xy x="20" y="20" width="790" height="539"/>
     </constraints>
     <properties>
-      <background color="-14803426"/>
-      <foreground color="-14803426"/>
+      <background color="-13750738"/>
+      <foreground color="-13750738"/>
     </properties>
     <border type="none"/>
     <children>
@@ -121,7 +121,8 @@
           </grid>
         </constraints>
         <properties>
-          <background color="-657413"/>
+          <background color="-13750738"/>
+          <foreground color="-657413"/>
           <model>
             <item value="Auswählen ..."/>
             <item value="Gehäuse 1"/>
@@ -137,6 +138,8 @@
           </grid>
         </constraints>
         <properties>
+          <background color="-13750738"/>
+          <foreground color="-657413"/>
           <model>
             <item value="Auswählen ..."/>
             <item value="CPU 1"/>
@@ -152,6 +155,8 @@
           </grid>
         </constraints>
         <properties>
+          <background color="-13750738"/>
+          <foreground color="-657413"/>
           <model>
             <item value="Auswählen ..."/>
             <item value="GPU 1"/>
@@ -167,6 +172,8 @@
           </grid>
         </constraints>
         <properties>
+          <background color="-13750738"/>
+          <foreground color="-657413"/>
           <model>
             <item value="Auswählen ..."/>
             <item value="RAM 1"/>
@@ -182,6 +189,8 @@
           </grid>
         </constraints>
         <properties>
+          <background color="-13750738"/>
+          <foreground color="-657413"/>
           <model>
             <item value="Auswählen ..."/>
             <item value="Motherboard 1"/>
@@ -197,6 +206,8 @@
           </grid>
         </constraints>
         <properties>
+          <background color="-13750738"/>
+          <foreground color="-657413"/>
           <model>
             <item value="Auswählen ..."/>
             <item value="CPU Cooler 1"/>
@@ -212,6 +223,8 @@
           </grid>
         </constraints>
         <properties>
+          <background color="-13750738"/>
+          <foreground color="-657413"/>
           <model>
             <item value="Auswählen ..."/>
             <item value="SSD 1"/>
@@ -231,6 +244,8 @@
           </grid>
         </constraints>
         <properties>
+          <background color="-13750738"/>
+          <foreground color="-657413"/>
           <model>
             <item value="Auswählen ..."/>
             <item value="PSU 1"/>
@@ -345,7 +360,8 @@
           <grid row="0" column="9" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <background color="-14803426"/>
+          <background color="-13750738"/>
+          <foreground color="-13750738"/>
         </properties>
         <border type="none"/>
         <children/>
@@ -356,7 +372,8 @@
           <grid row="11" column="5" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <background color="-14803426"/>
+          <background color="-13750738"/>
+          <foreground color="-13750738"/>
         </properties>
         <border type="none"/>
         <children/>
@@ -367,7 +384,8 @@
           <grid row="0" column="7" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <background color="-14803426"/>
+          <background color="-13750738"/>
+          <foreground color="-13750738"/>
         </properties>
         <border type="none"/>
         <children/>
@@ -378,7 +396,8 @@
           <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <background color="-14803426"/>
+          <background color="-13750738"/>
+          <foreground color="-13750738"/>
         </properties>
         <border type="none"/>
         <children/>
@@ -389,7 +408,8 @@
           <grid row="9" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <background color="-14803426"/>
+          <background color="-13750738"/>
+          <foreground color="-13750738"/>
         </properties>
         <border type="none"/>
         <children/>
@@ -412,7 +432,8 @@
           <grid row="13" column="5" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <background color="-14803426"/>
+          <background color="-13750738"/>
+          <foreground color="-13750738"/>
         </properties>
         <border type="none"/>
         <children/>
@@ -424,6 +445,8 @@
           </grid>
         </constraints>
         <properties>
+          <background color="-13750738"/>
+          <foreground color="-657413"/>
           <text value="Speichern"/>
         </properties>
       </component>
@@ -435,6 +458,16 @@
         </constraints>
         <properties>
           <text value=""/>
+        </properties>
+      </component>
+      <component id="715f1" class="javax.swing.JButton" binding="zurückButton" default-binding="true">
+        <constraints>
+          <grid row="0" column="8" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-13750738"/>
+          <foreground color="-657413"/>
+          <text value="Zurück"/>
         </properties>
       </component>
     </children>

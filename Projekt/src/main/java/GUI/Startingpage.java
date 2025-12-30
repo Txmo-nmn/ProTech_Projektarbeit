@@ -1,6 +1,7 @@
 package GUI;
 
 import javax.swing.*;
+import javax.swing.border.BevelBorder;
 import java.awt.*;
 
 public class Startingpage extends JFrame {
@@ -22,14 +23,18 @@ public class Startingpage extends JFrame {
         setVisible(true);
         // ----------------------------------------
         button_AddConfig.setFocusPainted(false);
-        button_AddConfig.setBorderPainted(false);
+        button_AddConfig.setBorderPainted(true);
         button_AddConfig.setContentAreaFilled(false);
         button_AddConfig.setOpaque(false);
+        button_AddConfig.setBorder(BorderFactory.createLineBorder(Color.WHITE));
+
 
         button_SavedConfigs.setFocusPainted(false);
-        button_SavedConfigs.setBorderPainted(false);
+        button_SavedConfigs.setBorderPainted(true);
         button_SavedConfigs.setContentAreaFilled(false);
         button_SavedConfigs.setOpaque(false);
+        button_SavedConfigs.setBorder(BorderFactory.createLineBorder(Color.WHITE));
+
 
         // Button "Add Config" öffnet den Konfigurator
         button_AddConfig.addActionListener(e -> {controller.openKonfigurator();
