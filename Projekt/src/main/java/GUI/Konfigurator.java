@@ -1,8 +1,12 @@
 package GUI;
 
 import javax.swing.*;
+import javax.swing.border.Border;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class Konfigurator extends JFrame {
     private JLabel title_label;
@@ -82,15 +86,86 @@ public class Konfigurator extends JFrame {
         memory_comboBox.addActionListener(e -> memoryPreisChange());
         psu_comboBox.addActionListener(e -> psuPreisChange());
 
-        speichern_button.addActionListener(e -> {controller.speichern(this);
-            dispose();
-            controller.showStartingpage();
+
+
+
+        main_Panel.setBorder(
+                BorderFactory.createMatteBorder(
+                        0, 24, 0, 24,
+                        new Color(46, 46, 46)
+                )
+        );
+
+        Color borderNormal = Color.WHITE;
+        Color borderHover  = new Color(120, 120, 120); // z. B. helles Grau
+
+        Border normalBorder = BorderFactory.createLineBorder(borderNormal, 2);
+        Border hoverBorder  = BorderFactory.createLineBorder(borderHover, 2);
+
+        Cursor handCursor = new Cursor(Cursor.HAND_CURSOR);
+        Cursor defaultCursor = new Cursor(Cursor.DEFAULT_CURSOR);
+
+        Dimension squareSize = new Dimension(90, 30);
+
+        zurückButton.setBorder(normalBorder);
+
+        zurückButton.setFocusPainted(false);
+        zurückButton.setBorderPainted(true);
+        zurückButton.setContentAreaFilled(false);
+        zurückButton.setOpaque(false);
+        zurückButton.setPreferredSize(squareSize);
+        zurückButton.setMinimumSize(squareSize);
+        zurückButton.setMaximumSize(squareSize);
+
+        zurückButton.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                zurückButton.setBorder(hoverBorder);
+                zurückButton.setCursor(handCursor);
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+                zurückButton.setBorder(normalBorder);
+                zurückButton.setCursor(defaultCursor);
+            }
         });
+
         zurückButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 controller.showStartingpage();
             }
+        });
+
+
+        speichern_button.setBorder(normalBorder);
+
+        speichern_button.setFocusPainted(false);
+        speichern_button.setBorderPainted(true);
+        speichern_button.setContentAreaFilled(false);
+        speichern_button.setOpaque(false);
+        speichern_button.setPreferredSize(squareSize);
+        speichern_button.setMinimumSize(squareSize);
+        speichern_button.setMaximumSize(squareSize);
+
+        speichern_button.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                speichern_button.setBorder(hoverBorder);
+                speichern_button.setCursor(handCursor);
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+                speichern_button.setBorder(normalBorder);
+                speichern_button.setCursor(defaultCursor);
+            }
+        });
+
+        speichern_button.addActionListener(e -> {controller.speichern(this);
+            dispose();
+            controller.showStartingpage();
         });
     }
 

@@ -1,6 +1,10 @@
 package GUI;
 
 import javax.swing.*;
+import javax.swing.border.Border;
+import java.awt.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.util.List;
 
 public class SavedConfigsScreen extends JFrame{
@@ -22,6 +26,49 @@ public class SavedConfigsScreen extends JFrame{
         showList(controller.unsortList());
 
         sortPreis_comboBox.addActionListener(e -> changeListByPreis());
+
+        panel1.setBorder(
+                BorderFactory.createMatteBorder(
+                        24, 24, 0, 24,
+                        new Color(46, 46, 46)
+                )
+        );
+
+        Color borderNormal = Color.WHITE;
+        Color borderHover  = new Color(120, 120, 120); // z. B. helles Grau
+
+        Border normalBorder = BorderFactory.createLineBorder(borderNormal, 2);
+        Border hoverBorder  = BorderFactory.createLineBorder(borderHover, 2);
+
+        Cursor handCursor = new Cursor(Cursor.HAND_CURSOR);
+        Cursor defaultCursor = new Cursor(Cursor.DEFAULT_CURSOR);
+
+        Dimension squareSize = new Dimension(90, 30);
+
+        buttonBack.setBorder(normalBorder);
+
+        buttonBack.setFocusPainted(false);
+        buttonBack.setBorderPainted(true);
+        buttonBack.setContentAreaFilled(false);
+        buttonBack.setOpaque(false);
+        buttonBack.setPreferredSize(squareSize);
+        buttonBack.setMinimumSize(squareSize);
+        buttonBack.setMaximumSize(squareSize);
+
+        buttonBack.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                buttonBack.setBorder(hoverBorder);
+                buttonBack.setCursor(handCursor);
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+                buttonBack.setBorder(normalBorder);
+                buttonBack.setCursor(defaultCursor);
+            }
+        });
+
         buttonBack.addActionListener(e -> {
             dispose();
             controller.showStartingpage();
