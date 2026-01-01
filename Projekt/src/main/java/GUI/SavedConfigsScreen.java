@@ -2,6 +2,9 @@ package GUI;
 
 import javax.swing.*;
 import javax.swing.border.Border;
+import javax.swing.plaf.basic.BasicComboBoxUI;
+import javax.swing.table.DefaultTableCellRenderer;
+import javax.swing.table.JTableHeader;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -29,7 +32,7 @@ public class SavedConfigsScreen extends JFrame{
 
         panel1.setBorder(
                 BorderFactory.createMatteBorder(
-                        24, 24, 0, 24,
+                        25, 40, 40, 40,
                         new Color(46, 46, 46)
                 )
         );
@@ -45,8 +48,50 @@ public class SavedConfigsScreen extends JFrame{
 
         Dimension squareSize = new Dimension(90, 30);
 
-        buttonBack.setBorder(normalBorder);
+        JScrollPane scrollPane = (JScrollPane) SwingUtilities.getAncestorOfClass(
+                JScrollPane.class, objektAusgabe_table
+        );
 
+        scrollPane.getViewport().setBackground(new Color(46, 46, 46));
+        scrollPane.setBorder(BorderFactory.createLineBorder(new Color(46, 46, 46), 2));
+
+        objektAusgabe_table.setBorder(normalBorder);
+        objektAusgabe_table.setBackground(new Color(46, 46, 46));
+        objektAusgabe_table.setForeground(Color.WHITE);
+        objektAusgabe_table.setGridColor(Color.WHITE);
+        objektAusgabe_table.setShowGrid(true);
+        objektAusgabe_table.setFillsViewportHeight(true);
+        objektAusgabe_table.setFocusable(false);
+        scrollPane.setFocusable(false);
+        scrollPane.getViewport().setFocusable(false);
+
+        JTableHeader header = objektAusgabe_table.getTableHeader();
+        header.setBackground(new Color(46, 46, 46));
+        header.setForeground(Color.WHITE);
+        header.setBorder(BorderFactory.createLineBorder(Color.WHITE, 1));
+
+        header.setDefaultRenderer(new DefaultTableCellRenderer() {
+            @Override
+            public Component getTableCellRendererComponent(
+                    JTable table, Object value, boolean isSelected,
+                    boolean hasFocus, int row, int column) {
+
+                super.getTableCellRendererComponent(
+                        table, value, false, false, row, column
+                );
+
+                setBackground(Color.WHITE);
+                setForeground(new Color(46, 46, 46));
+                setHorizontalAlignment(CENTER);
+                setBorder(BorderFactory.createMatteBorder(0, 0, 1, 1, Color.WHITE));
+                return this;
+            }
+        });
+
+
+
+
+        buttonBack.setBorder(normalBorder);
         buttonBack.setFocusPainted(false);
         buttonBack.setBorderPainted(true);
         buttonBack.setContentAreaFilled(false);
@@ -54,7 +99,6 @@ public class SavedConfigsScreen extends JFrame{
         buttonBack.setPreferredSize(squareSize);
         buttonBack.setMinimumSize(squareSize);
         buttonBack.setMaximumSize(squareSize);
-
         buttonBack.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseEntered(MouseEvent e) {
@@ -68,11 +112,80 @@ public class SavedConfigsScreen extends JFrame{
                 buttonBack.setCursor(defaultCursor);
             }
         });
-
         buttonBack.addActionListener(e -> {
             dispose();
             controller.showStartingpage();
         });
+
+
+        sortPreis_comboBox.setFocusable(false);
+        sortPreis_comboBox.setBorder(normalBorder);
+        sortPreis_comboBox.setBackground(new Color(46, 46, 46));
+        sortPreis_comboBox.setForeground(Color.WHITE);
+        sortPreis_comboBox.setUI(new BasicComboBoxUI() {
+
+            @Override
+            protected JButton createArrowButton() {
+
+                JButton arrowButton = new JButton() {
+
+                    @Override
+                    protected void paintComponent(Graphics g) {
+                        super.paintComponent(g);
+
+                        Graphics2D g2 = (Graphics2D) g.create();
+                        g2.setRenderingHint(
+                                RenderingHints.KEY_ANTIALIASING,
+                                RenderingHints.VALUE_ANTIALIAS_ON
+                        );
+
+                        int w = getWidth();
+                        int h = getHeight();
+
+                        // Pfeil zeichnen (weiß)
+                        int size = 8;
+                        int x = w / 2;
+                        int y = h / 2;
+
+                        Polygon arrow = new Polygon();
+                        arrow.addPoint(x - size / 2, y - size / 4);
+                        arrow.addPoint(x + size / 2, y - size / 4);
+                        arrow.addPoint(x, y + size / 2);
+
+                        g2.setColor(Color.WHITE);
+                        g2.fill(arrow);
+
+                        g2.dispose();
+                    }
+                };
+
+                // Button-Styling
+                arrowButton.setBackground(new Color(46, 46, 46));
+                arrowButton.setOpaque(true);
+                arrowButton.setBorder(BorderFactory.createEmptyBorder());
+                arrowButton.setFocusPainted(false);
+                arrowButton.setContentAreaFilled(true);
+                arrowButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+
+                return arrowButton;
+            }
+
+            @Override
+            public void paintCurrentValueBackground(
+                    Graphics g, Rectangle bounds, boolean hasFocus) {
+
+                g.setColor(new Color(46, 46, 46));
+                g.fillRect(bounds.x, bounds.y, bounds.width, bounds.height);
+            }
+        });
+
+
+        preis_textField.setBackground(new Color(46, 46, 46));
+        preis_textField.setForeground(Color.WHITE);
+        preis_textField.setBorder(BorderFactory.createMatteBorder(
+                0, 0, 2, 0,
+                new Color(255, 255, 255)
+        ));
 
         preis_textField.addActionListener(e->{
             //Fehlerbehandlung
