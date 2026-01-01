@@ -2,6 +2,7 @@ package GUI;
 
 import javax.swing.*;
 import javax.swing.border.Border;
+import javax.swing.plaf.basic.BasicComboBoxUI;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -107,8 +108,504 @@ public class Konfigurator extends JFrame {
 
         Dimension squareSize = new Dimension(90, 30);
 
-        zurückButton.setBorder(normalBorder);
 
+        gehaeuse_comboBox.setFocusable(false);
+        gehaeuse_comboBox.setBorder(normalBorder);
+        gehaeuse_comboBox.setBackground(new Color(46, 46, 46));
+        gehaeuse_comboBox.setForeground(Color.WHITE);
+        gehaeuse_comboBox.setUI(new BasicComboBoxUI() {
+
+            @Override
+            protected JButton createArrowButton() {
+
+                JButton arrowButton = new JButton() {
+
+                    @Override
+                    protected void paintComponent(Graphics g) {
+                        super.paintComponent(g);
+
+                        Graphics2D g2 = (Graphics2D) g.create();
+                        g2.setRenderingHint(
+                                RenderingHints.KEY_ANTIALIASING,
+                                RenderingHints.VALUE_ANTIALIAS_ON
+                        );
+
+                        int w = getWidth();
+                        int h = getHeight();
+
+                        // Pfeil zeichnen (weiß)
+                        int size = 8;
+                        int x = w / 2;
+                        int y = h / 2;
+
+                        Polygon arrow = new Polygon();
+                        arrow.addPoint(x - size / 2, y - size / 4);
+                        arrow.addPoint(x + size / 2, y - size / 4);
+                        arrow.addPoint(x, y + size / 2);
+
+                        g2.setColor(Color.WHITE);
+                        g2.fill(arrow);
+
+                        g2.dispose();
+                    }
+                };
+
+                // Button-Styling
+                arrowButton.setBackground(new Color(46, 46, 46));
+                arrowButton.setOpaque(true);
+                arrowButton.setBorder(BorderFactory.createEmptyBorder());
+                arrowButton.setFocusPainted(false);
+                arrowButton.setContentAreaFilled(true);
+                arrowButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+
+                return arrowButton;
+            }
+
+            @Override
+            public void paintCurrentValueBackground(
+                    Graphics g, Rectangle bounds, boolean hasFocus) {
+
+                g.setColor(new Color(46, 46, 46));
+                g.fillRect(bounds.x, bounds.y, bounds.width, bounds.height);
+            }
+        });
+
+
+        cpu_comboBox.setFocusable(false);
+        cpu_comboBox.setBorder(normalBorder);
+        cpu_comboBox.setBackground(new Color(46, 46, 46));
+        cpu_comboBox.setForeground(Color.WHITE);
+        cpu_comboBox.setUI(new BasicComboBoxUI() {
+
+            @Override
+            protected JButton createArrowButton() {
+
+                JButton arrowButton = new JButton() {
+
+                    @Override
+                    protected void paintComponent(Graphics g) {
+                        super.paintComponent(g);
+
+                        Graphics2D g2 = (Graphics2D) g.create();
+                        g2.setRenderingHint(
+                                RenderingHints.KEY_ANTIALIASING,
+                                RenderingHints.VALUE_ANTIALIAS_ON
+                        );
+
+                        int w = getWidth();
+                        int h = getHeight();
+
+                        // Pfeil zeichnen (weiß)
+                        int size = 8;
+                        int x = w / 2;
+                        int y = h / 2;
+
+                        Polygon arrow = new Polygon();
+                        arrow.addPoint(x - size / 2, y - size / 4);
+                        arrow.addPoint(x + size / 2, y - size / 4);
+                        arrow.addPoint(x, y + size / 2);
+
+                        g2.setColor(Color.WHITE);
+                        g2.fill(arrow);
+
+                        g2.dispose();
+                    }
+                };
+
+                // Button-Styling
+                arrowButton.setBackground(new Color(46, 46, 46));
+                arrowButton.setOpaque(true);
+                arrowButton.setBorder(BorderFactory.createEmptyBorder());
+                arrowButton.setFocusPainted(false);
+                arrowButton.setContentAreaFilled(true);
+                arrowButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+
+                return arrowButton;
+            }
+
+            @Override
+            public void paintCurrentValueBackground(
+                    Graphics g, Rectangle bounds, boolean hasFocus) {
+
+                g.setColor(new Color(46, 46, 46));
+                g.fillRect(bounds.x, bounds.y, bounds.width, bounds.height);
+            }
+        });
+
+
+        gpu_comboBox.setFocusable(false);
+        gpu_comboBox.setBorder(normalBorder);
+        gpu_comboBox.setBackground(new Color(46, 46, 46));
+        gpu_comboBox.setForeground(Color.WHITE);
+        gpu_comboBox.setUI(new BasicComboBoxUI() {
+
+            @Override
+            protected JButton createArrowButton() {
+
+                JButton arrowButton = new JButton() {
+
+                    @Override
+                    protected void paintComponent(Graphics g) {
+                        super.paintComponent(g);
+
+                        Graphics2D g2 = (Graphics2D) g.create();
+                        g2.setRenderingHint(
+                                RenderingHints.KEY_ANTIALIASING,
+                                RenderingHints.VALUE_ANTIALIAS_ON
+                        );
+
+                        int w = getWidth();
+                        int h = getHeight();
+
+                        // Pfeil zeichnen (weiß)
+                        int size = 8;
+                        int x = w / 2;
+                        int y = h / 2;
+
+                        Polygon arrow = new Polygon();
+                        arrow.addPoint(x - size / 2, y - size / 4);
+                        arrow.addPoint(x + size / 2, y - size / 4);
+                        arrow.addPoint(x, y + size / 2);
+
+                        g2.setColor(Color.WHITE);
+                        g2.fill(arrow);
+
+                        g2.dispose();
+                    }
+                };
+
+                // Button-Styling
+                arrowButton.setBackground(new Color(46, 46, 46));
+                arrowButton.setOpaque(true);
+                arrowButton.setBorder(BorderFactory.createEmptyBorder());
+                arrowButton.setFocusPainted(false);
+                arrowButton.setContentAreaFilled(true);
+                arrowButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+
+                return arrowButton;
+            }
+
+            @Override
+            public void paintCurrentValueBackground(
+                    Graphics g, Rectangle bounds, boolean hasFocus) {
+
+                g.setColor(new Color(46, 46, 46));
+                g.fillRect(bounds.x, bounds.y, bounds.width, bounds.height);
+            }
+        });
+
+
+        ram_comboBox.setFocusable(false);
+        ram_comboBox.setBorder(normalBorder);
+        ram_comboBox.setBackground(new Color(46, 46, 46));
+        ram_comboBox.setForeground(Color.WHITE);
+        ram_comboBox.setUI(new BasicComboBoxUI() {
+
+            @Override
+            protected JButton createArrowButton() {
+
+                JButton arrowButton = new JButton() {
+
+                    @Override
+                    protected void paintComponent(Graphics g) {
+                        super.paintComponent(g);
+
+                        Graphics2D g2 = (Graphics2D) g.create();
+                        g2.setRenderingHint(
+                                RenderingHints.KEY_ANTIALIASING,
+                                RenderingHints.VALUE_ANTIALIAS_ON
+                        );
+
+                        int w = getWidth();
+                        int h = getHeight();
+
+                        // Pfeil zeichnen (weiß)
+                        int size = 8;
+                        int x = w / 2;
+                        int y = h / 2;
+
+                        Polygon arrow = new Polygon();
+                        arrow.addPoint(x - size / 2, y - size / 4);
+                        arrow.addPoint(x + size / 2, y - size / 4);
+                        arrow.addPoint(x, y + size / 2);
+
+                        g2.setColor(Color.WHITE);
+                        g2.fill(arrow);
+
+                        g2.dispose();
+                    }
+                };
+
+                // Button-Styling
+                arrowButton.setBackground(new Color(46, 46, 46));
+                arrowButton.setOpaque(true);
+                arrowButton.setBorder(BorderFactory.createEmptyBorder());
+                arrowButton.setFocusPainted(false);
+                arrowButton.setContentAreaFilled(true);
+                arrowButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+
+                return arrowButton;
+            }
+
+            @Override
+            public void paintCurrentValueBackground(
+                    Graphics g, Rectangle bounds, boolean hasFocus) {
+
+                g.setColor(new Color(46, 46, 46));
+                g.fillRect(bounds.x, bounds.y, bounds.width, bounds.height);
+            }
+        });
+
+
+        motherboard_comboBox.setFocusable(false);
+        motherboard_comboBox.setBorder(normalBorder);
+        motherboard_comboBox.setBackground(new Color(46, 46, 46));
+        motherboard_comboBox.setForeground(Color.WHITE);
+        motherboard_comboBox.setUI(new BasicComboBoxUI() {
+
+            @Override
+            protected JButton createArrowButton() {
+
+                JButton arrowButton = new JButton() {
+
+                    @Override
+                    protected void paintComponent(Graphics g) {
+                        super.paintComponent(g);
+
+                        Graphics2D g2 = (Graphics2D) g.create();
+                        g2.setRenderingHint(
+                                RenderingHints.KEY_ANTIALIASING,
+                                RenderingHints.VALUE_ANTIALIAS_ON
+                        );
+
+                        int w = getWidth();
+                        int h = getHeight();
+
+                        // Pfeil zeichnen (weiß)
+                        int size = 8;
+                        int x = w / 2;
+                        int y = h / 2;
+
+                        Polygon arrow = new Polygon();
+                        arrow.addPoint(x - size / 2, y - size / 4);
+                        arrow.addPoint(x + size / 2, y - size / 4);
+                        arrow.addPoint(x, y + size / 2);
+
+                        g2.setColor(Color.WHITE);
+                        g2.fill(arrow);
+
+                        g2.dispose();
+                    }
+                };
+
+                // Button-Styling
+                arrowButton.setBackground(new Color(46, 46, 46));
+                arrowButton.setOpaque(true);
+                arrowButton.setBorder(BorderFactory.createEmptyBorder());
+                arrowButton.setFocusPainted(false);
+                arrowButton.setContentAreaFilled(true);
+                arrowButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+
+                return arrowButton;
+            }
+
+            @Override
+            public void paintCurrentValueBackground(
+                    Graphics g, Rectangle bounds, boolean hasFocus) {
+
+                g.setColor(new Color(46, 46, 46));
+                g.fillRect(bounds.x, bounds.y, bounds.width, bounds.height);
+            }
+        });
+
+
+        cpuCooler_comboBox.setFocusable(false);
+        cpuCooler_comboBox.setBorder(normalBorder);
+        cpuCooler_comboBox.setBackground(new Color(46, 46, 46));
+        cpuCooler_comboBox.setForeground(Color.WHITE);
+        cpuCooler_comboBox.setUI(new BasicComboBoxUI() {
+
+            @Override
+            protected JButton createArrowButton() {
+
+                JButton arrowButton = new JButton() {
+
+                    @Override
+                    protected void paintComponent(Graphics g) {
+                        super.paintComponent(g);
+
+                        Graphics2D g2 = (Graphics2D) g.create();
+                        g2.setRenderingHint(
+                                RenderingHints.KEY_ANTIALIASING,
+                                RenderingHints.VALUE_ANTIALIAS_ON
+                        );
+
+                        int w = getWidth();
+                        int h = getHeight();
+
+                        // Pfeil zeichnen (weiß)
+                        int size = 8;
+                        int x = w / 2;
+                        int y = h / 2;
+
+                        Polygon arrow = new Polygon();
+                        arrow.addPoint(x - size / 2, y - size / 4);
+                        arrow.addPoint(x + size / 2, y - size / 4);
+                        arrow.addPoint(x, y + size / 2);
+
+                        g2.setColor(Color.WHITE);
+                        g2.fill(arrow);
+
+                        g2.dispose();
+                    }
+                };
+
+                // Button-Styling
+                arrowButton.setBackground(new Color(46, 46, 46));
+                arrowButton.setOpaque(true);
+                arrowButton.setBorder(BorderFactory.createEmptyBorder());
+                arrowButton.setFocusPainted(false);
+                arrowButton.setContentAreaFilled(true);
+                arrowButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+
+                return arrowButton;
+            }
+
+            @Override
+            public void paintCurrentValueBackground(
+                    Graphics g, Rectangle bounds, boolean hasFocus) {
+
+                g.setColor(new Color(46, 46, 46));
+                g.fillRect(bounds.x, bounds.y, bounds.width, bounds.height);
+            }
+        });
+
+
+        memory_comboBox.setFocusable(false);
+        memory_comboBox.setBorder(normalBorder);
+        memory_comboBox.setBackground(new Color(46, 46, 46));
+        memory_comboBox.setForeground(Color.WHITE);
+        memory_comboBox.setUI(new BasicComboBoxUI() {
+
+            @Override
+            protected JButton createArrowButton() {
+
+                JButton arrowButton = new JButton() {
+
+                    @Override
+                    protected void paintComponent(Graphics g) {
+                        super.paintComponent(g);
+
+                        Graphics2D g2 = (Graphics2D) g.create();
+                        g2.setRenderingHint(
+                                RenderingHints.KEY_ANTIALIASING,
+                                RenderingHints.VALUE_ANTIALIAS_ON
+                        );
+
+                        int w = getWidth();
+                        int h = getHeight();
+
+                        // Pfeil zeichnen (weiß)
+                        int size = 8;
+                        int x = w / 2;
+                        int y = h / 2;
+
+                        Polygon arrow = new Polygon();
+                        arrow.addPoint(x - size / 2, y - size / 4);
+                        arrow.addPoint(x + size / 2, y - size / 4);
+                        arrow.addPoint(x, y + size / 2);
+
+                        g2.setColor(Color.WHITE);
+                        g2.fill(arrow);
+
+                        g2.dispose();
+                    }
+                };
+
+                // Button-Styling
+                arrowButton.setBackground(new Color(46, 46, 46));
+                arrowButton.setOpaque(true);
+                arrowButton.setBorder(BorderFactory.createEmptyBorder());
+                arrowButton.setFocusPainted(false);
+                arrowButton.setContentAreaFilled(true);
+                arrowButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+
+                return arrowButton;
+            }
+
+            @Override
+            public void paintCurrentValueBackground(
+                    Graphics g, Rectangle bounds, boolean hasFocus) {
+
+                g.setColor(new Color(46, 46, 46));
+                g.fillRect(bounds.x, bounds.y, bounds.width, bounds.height);
+            }
+        });
+
+
+        psu_comboBox.setFocusable(false);
+        psu_comboBox.setBorder(normalBorder);
+        psu_comboBox.setBackground(new Color(46, 46, 46));
+        psu_comboBox.setForeground(Color.WHITE);
+        psu_comboBox.setUI(new BasicComboBoxUI() {
+
+            @Override
+            protected JButton createArrowButton() {
+
+                JButton arrowButton = new JButton() {
+
+                    @Override
+                    protected void paintComponent(Graphics g) {
+                        super.paintComponent(g);
+
+                        Graphics2D g2 = (Graphics2D) g.create();
+                        g2.setRenderingHint(
+                                RenderingHints.KEY_ANTIALIASING,
+                                RenderingHints.VALUE_ANTIALIAS_ON
+                        );
+
+                        int w = getWidth();
+                        int h = getHeight();
+
+                        // Pfeil zeichnen (weiß)
+                        int size = 8;
+                        int x = w / 2;
+                        int y = h / 2;
+
+                        Polygon arrow = new Polygon();
+                        arrow.addPoint(x - size / 2, y - size / 4);
+                        arrow.addPoint(x + size / 2, y - size / 4);
+                        arrow.addPoint(x, y + size / 2);
+
+                        g2.setColor(Color.WHITE);
+                        g2.fill(arrow);
+
+                        g2.dispose();
+                    }
+                };
+
+                // Button-Styling
+                arrowButton.setBackground(new Color(46, 46, 46));
+                arrowButton.setOpaque(true);
+                arrowButton.setBorder(BorderFactory.createEmptyBorder());
+                arrowButton.setFocusPainted(false);
+                arrowButton.setContentAreaFilled(true);
+                arrowButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+
+                return arrowButton;
+            }
+
+            @Override
+            public void paintCurrentValueBackground(
+                    Graphics g, Rectangle bounds, boolean hasFocus) {
+
+                g.setColor(new Color(46, 46, 46));
+                g.fillRect(bounds.x, bounds.y, bounds.width, bounds.height);
+            }
+        });
+
+
+        zurückButton.setBorder(normalBorder);
         zurückButton.setFocusPainted(false);
         zurückButton.setBorderPainted(true);
         zurückButton.setContentAreaFilled(false);
@@ -116,7 +613,6 @@ public class Konfigurator extends JFrame {
         zurückButton.setPreferredSize(squareSize);
         zurückButton.setMinimumSize(squareSize);
         zurückButton.setMaximumSize(squareSize);
-
         zurückButton.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseEntered(MouseEvent e) {
@@ -130,17 +626,16 @@ public class Konfigurator extends JFrame {
                 zurückButton.setCursor(defaultCursor);
             }
         });
-
         zurückButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                dispose();
                 controller.showStartingpage();
             }
         });
 
 
         speichern_button.setBorder(normalBorder);
-
         speichern_button.setFocusPainted(false);
         speichern_button.setBorderPainted(true);
         speichern_button.setContentAreaFilled(false);
@@ -148,7 +643,6 @@ public class Konfigurator extends JFrame {
         speichern_button.setPreferredSize(squareSize);
         speichern_button.setMinimumSize(squareSize);
         speichern_button.setMaximumSize(squareSize);
-
         speichern_button.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseEntered(MouseEvent e) {
@@ -162,11 +656,18 @@ public class Konfigurator extends JFrame {
                 speichern_button.setCursor(defaultCursor);
             }
         });
-
         speichern_button.addActionListener(e -> {controller.speichern(this);
             dispose();
             controller.showStartingpage();
         });
+
+
+        name_textField.setBackground(new Color(46, 46, 46));
+        name_textField.setForeground(Color.WHITE);
+        name_textField.setBorder(BorderFactory.createMatteBorder(
+                0, 0, 2, 0,
+                new Color(255, 255, 255)
+        ));
     }
 
     // setzt am Anfang alles auf Standard
