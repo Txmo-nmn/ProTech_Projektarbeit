@@ -194,7 +194,8 @@ public class SavedConfigsScreen extends JFrame{
 
                 //wirft Fehler bei leerem Textfeld
                 if (preisEingabe.isEmpty()) {
-                    throw new NumberFormatException("Leer");
+                    showList(controller.unsortList());
+                    return;
                 }
                 //dadurch kann man auch Kommas eingeben
                 preisEingabe = preisEingabe.replace(',', '.');
@@ -221,7 +222,7 @@ public class SavedConfigsScreen extends JFrame{
         // Spaltenüberschriften
         String[] columnNames = {
                 "Name","Gehäuse", "CPU", "GPU", "RAM",
-                "Motherboard", "Kühler", "Speicher", "Netzteil", "Preis"
+                "Motherboard", "Kühler", "Speicher", "Netzteil","Vollständig","Preis"
         };
 
         // Daten-The matrix
@@ -238,7 +239,8 @@ public class SavedConfigsScreen extends JFrame{
             data[i][6] = pc.getCpuCooler();
             data[i][7] = pc.getMemory();
             data[i][8] = pc.getPsu();
-            data[i][9] = pc.getGesPreis();
+            data[i][9] = pc.getVollstaendig();
+            data[i][10] = pc.getGesPreis();
         }
 
         // Model erstellen und der vorhandenen JTable zuweisen

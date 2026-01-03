@@ -58,6 +58,16 @@ public class Konfigurator extends JFrame {
     private double psuPreis;
     private double gesPreis;
 
+    private boolean vollstaendigB = false;
+    private boolean gehaeseB = false;
+    private boolean cpuB = false;
+    private boolean gpuB = false;
+    private boolean ramB = false;
+    private boolean motherboardB = false;
+    private boolean cpuCoolerB = false;
+    private boolean memoryB = false;
+    private boolean psuB = false;
+
     private Controller controller;
 
     public Konfigurator(Controller controller) {
@@ -690,18 +700,22 @@ public class Konfigurator extends JFrame {
             case "Gehäuse 1":
                 gehaeusePreis_label.setText("50€");
                 gehaeusePreis = 50;
+                gehaeseB = true;
                 break;
             case "Gehäuse 2":
                 gehaeusePreis_label.setText("80€");
                 gehaeusePreis = 80;
+                gehaeseB = true;
                 break;
             case "Gehäuse 3":
                 gehaeusePreis_label.setText("100€");
                 gehaeusePreis = 100;
+                gehaeseB = true;
                 break;
             default:
                 gehaeusePreis_label.setText("-");
                 gehaeusePreis = 0;
+                gehaeseB = false;
         }
         gesamtpreisRechner();
     }
@@ -712,18 +726,22 @@ public class Konfigurator extends JFrame {
             case "CPU 1":
                 cpuPreis_label.setText("50€");
                 cpuPreis = 50;
+                cpuB = true;
                 break;
             case "CPU 2":
                 cpuPreis_label.setText("80€");
                 cpuPreis = 80;
+                cpuB = true;
                 break;
             case "CPU 3":
                 cpuPreis_label.setText("100€");
                 cpuPreis = 100;
+                cpuB = true;
                 break;
             default:
                 cpuPreis_label.setText("-");
                 cpuPreis = 0;
+                cpuB = false;
         }
         gesamtpreisRechner();
     }
@@ -734,18 +752,22 @@ public class Konfigurator extends JFrame {
             case "GPU 1":
                 gpuPreis_label.setText("50€");
                 gpuPreis = 50;
+                gpuB = true;
                 break;
             case "GPU 2":
                 gpuPreis_label.setText("80€");
                 gpuPreis = 80;
+                gpuB = true;
                 break;
             case "GPU 3":
                 gpuPreis_label.setText("100€");
                 gpuPreis = 100;
+                gpuB = true;
                 break;
             default:
                 gpuPreis_label.setText("-");
                 gpuPreis = 0;
+                gpuB = false;
         }
         gesamtpreisRechner();
     }
@@ -756,18 +778,22 @@ public class Konfigurator extends JFrame {
             case "RAM 1":
                 ramPreis_label.setText("50€");
                 ramPreis = 50;
+                ramB = true;
                 break;
             case "RAM 2":
                 ramPreis_label.setText("80€");
                 ramPreis = 80;
+                ramB = true;
                 break;
             case "RAM 3":
                 ramPreis_label.setText("100€");
                 ramPreis = 100;
+                ramB = true;
                 break;
             default:
                 ramPreis_label.setText("-");
                 ramPreis = 0;
+                ramB = false;
         }
         gesamtpreisRechner();
     }
@@ -778,18 +804,22 @@ public class Konfigurator extends JFrame {
             case "Motherboard 1":
                 motherboardPreis_label.setText("50€");
                 motherboardPreis = 50;
+                motherboardB = true;
                 break;
             case "Motherboard 2":
                 motherboardPreis_label.setText("80€");
                 motherboardPreis = 80;
+                motherboardB = true;
                 break;
             case "Motherboard 3":
                 motherboardPreis_label.setText("100€");
                 motherboardPreis = 100;
+                motherboardB = true;
                 break;
             default:
                 motherboardPreis_label.setText("-");
                 motherboardPreis = 0;
+                motherboardB = false;
         }
         gesamtpreisRechner();
     }
@@ -800,18 +830,22 @@ public class Konfigurator extends JFrame {
             case "CPU Cooler 1":
                 cpuCoolerPreis_label.setText("50€");
                 cpuCoolerPreis = 50;
+                cpuCoolerB = true;
                 break;
             case "CPU Cooler 2":
                 cpuCoolerPreis_label.setText("80€");
                 cpuCoolerPreis = 80;
+                cpuCoolerB = true;
                 break;
             case "CPU Cooler 3":
                 cpuCoolerPreis_label.setText("100€");
                 cpuCoolerPreis = 100;
+                cpuCoolerB = true;
                 break;
             default:
                 cpuCoolerPreis_label.setText("-");
                 cpuCoolerPreis = 0;
+                cpuCoolerB = false;
         }
         gesamtpreisRechner();
     }
@@ -822,34 +856,42 @@ public class Konfigurator extends JFrame {
             case "SSD 1":
                 memoryPreis_label.setText("50€");
                 memoryPreis = 50;
+                memoryB = true;
                 break;
             case "SSD 2":
                 memoryPreis_label.setText("80€");
                 memoryPreis = 80;
+                memoryB = true;
                 break;
             case "SSD 3":
                 memoryPreis_label.setText("80€");
                 memoryPreis = 80;
+                memoryB = true;
                 break;
             case "HDD 1":
                 memoryPreis_label.setText("100€");
                 memoryPreis = 100;
+                memoryB = true;
                 break;
             case "HHD 2":
                 memoryPreis_label.setText("100€");
                 memoryPreis = 100;
+                memoryB = true;
                 break;
             case "NVME 1":
                 memoryPreis_label.setText("100€");
                 memoryPreis = 100;
+                memoryB = true;
                 break;
             case "NVME 2":
                 memoryPreis_label.setText("100€");
                 memoryPreis = 100;
+                memoryB = true;
                 break;
             default:
                 memoryPreis_label.setText("-");
                 memoryPreis = 0;
+                memoryB = false;
         }
         gesamtpreisRechner();
     }
@@ -860,18 +902,22 @@ public class Konfigurator extends JFrame {
             case "PSU 1":
                 psuPreis_label.setText("50€");
                 psuPreis = 50;
+                psuB = true;
                 break;
             case "PSU 2":
                 psuPreis_label.setText("80€");
                 psuPreis = 80;
+                psuB = true;
                 break;
             case "PSU 3":
                 psuPreis_label.setText("100€");
                 psuPreis = 100;
+                psuB = true;
                 break;
             default:
                 psuPreis_label.setText("-");
                 psuPreis = 0;
+                psuB = false;
         }
         gesamtpreisRechner();
     }
@@ -886,5 +932,12 @@ public class Konfigurator extends JFrame {
     //getter
     public double getGesPreis(){
         return gesPreis;
+    }
+
+    public boolean getVollstaendig(){
+        if(gehaeseB && cpuB && gpuB && ramB && motherboardB && cpuCoolerB && memoryB && psuB){
+            vollstaendigB = true;
+        }
+        return vollstaendigB;
     }
 }
