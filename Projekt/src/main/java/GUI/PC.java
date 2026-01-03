@@ -11,10 +11,11 @@ public class PC {
     private String memory;
     private String psu;
     private double gesPreis;
+    private boolean vollstaendig;
     private int nummer;
 
     //Constructor
-    public PC(String name, String gehaeuse, String cpu, String gpu, String ram, String motherboard, String cpuCooler, String memory, String psu, double gesPreis, int nummer) {
+    public PC(String name, String gehaeuse, String cpu, String gpu, String ram, String motherboard, String cpuCooler, String memory, String psu, double gesPreis,boolean vollstaendig, int nummer) {
         this.name = name;
         this.gehaeuse = gehaeuse;
         this.cpu = cpu;
@@ -25,6 +26,7 @@ public class PC {
         this.memory = memory;
         this.psu = psu;
         this.gesPreis = gesPreis;
+        this.vollstaendig = vollstaendig;
         this.nummer = nummer;
     }
 
@@ -57,6 +59,7 @@ public class PC {
     public double getGesPreis() {
         return gesPreis;
     }
+    public boolean getVollstaendig(){return vollstaendig;}
     public int getNummer(){
         return nummer;
     }

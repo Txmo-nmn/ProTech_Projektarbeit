@@ -67,8 +67,9 @@ public class Controller {
         String memory = gui.memory_comboBox.getSelectedItem().toString();
         String psu = gui.psu_comboBox.getSelectedItem().toString();
         double gesPreis = gui.getGesPreis();
+        boolean vollstaendig = gui.getVollstaendig();
 
-        PC pc = new PC(name, gehaeuse, cpu, gpu, ram, motherboard, cpuCooler, memory, psu, gesPreis, nummer);   //neues PC Objekt erstellen
+        PC pc = new PC(name, gehaeuse, cpu, gpu, ram, motherboard, cpuCooler, memory, psu, gesPreis,vollstaendig, nummer);   //neues PC Objekt erstellen
 
         String key = "pc" + pcCounter;
         pcMap.put(key, pc);
@@ -108,11 +109,11 @@ public class Controller {
     //3 Objecte erstellen
     public void initObjekte(){
         PC pc1 = new PC("Konfiguration 1","Gehäuse 1", "CPU 1", "GPU 1", "RAM 1",
-                "Motherboard 1", "CPU Cooler 1", "SSD 1", "PSU 1", 400,1);
+                "Motherboard 1", "CPU Cooler 1", "SSD 1", "PSU 1", 400,true,1);
         PC pc2 = new PC("Konfiguration 1","Gehäuse 2", "CPU 2", "GPU 2", "RAM 2",
-                "Motherboard 2", "CPU Cooler 2", "SSD 2", "PSU 2", 640,2);
+                "Motherboard 2", "CPU Cooler 2", "SSD 2", "PSU 2", 640,true,2);
         PC pc3 = new PC("Konfiguration 3","Gehäuse 3", "CPU 3", "GPU 3", "RAM 3",
-                "Motherboard 3", "CPU Cooler 3", "SSD 3", "PSU 3", 800,3);
+                "Motherboard 3", "CPU Cooler 3", "SSD 3", "PSU 3", 800,true,3);
 
         // automatische Nummerierung
         pcCounter++;

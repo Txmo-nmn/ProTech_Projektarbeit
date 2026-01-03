@@ -14,11 +14,11 @@ public class ControllerTest {
         controller = new Controller(false);
 
         pc1 = new PC("Name1","Gehäuse 1", "CPU 1", "GPU 1", "RAM 1",
-                "Motherboard 1", "CPU Cooler 1", "SSD 1", "PSU 1", 1000,1);
+                "Motherboard 1", "CPU Cooler 1", "SSD 1", "PSU 1", 1000,true,1);
         pc2 = new PC("Name2","Gehäuse 2", "CPU 2", "GPU 2", "RAM 2",
-                "Motherboard 2", "CPU Cooler 2", "SSD 2", "PSU 2", 2000,2);
+                "Motherboard 2", "CPU Cooler 2", "SSD 2", "PSU 2", 2000,true,2);
         pc3 = new PC("Name3","Gehäuse 3", "CPU 3", "GPU 3", "RAM 3",
-                "Motherboard 3", "CPU Cooler 3", "SSD 3", "PSU 3", 1500,3);
+                "Motherboard 3", "CPU Cooler 3", "SSD 3", "PSU 3", 1500,true,3);
 
         controller.getPcMap().clear();
         controller.getPcMap().put("pc1", pc1);
