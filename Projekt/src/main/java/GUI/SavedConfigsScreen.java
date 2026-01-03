@@ -194,7 +194,8 @@ public class SavedConfigsScreen extends JFrame{
 
                 //wirft Fehler bei leerem Textfeld
                 if (preisEingabe.isEmpty()) {
-                    throw new NumberFormatException("Leer");
+                    showList(controller.unsortList());
+                    return;
                 }
                 //dadurch kann man auch Kommas eingeben
                 preisEingabe = preisEingabe.replace(',', '.');
