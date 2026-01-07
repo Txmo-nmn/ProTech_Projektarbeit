@@ -703,13 +703,13 @@ public class Konfigurator extends JFrame {
                 gehaeseB = true;
                 break;
             case "Gehäuse 2":
-                gehaeusePreis_label.setText("80€");
-                gehaeusePreis = 80;
+                gehaeusePreis_label.setText("100€");
+                gehaeusePreis = 100;
                 gehaeseB = true;
                 break;
             case "Gehäuse 3":
-                gehaeusePreis_label.setText("100€");
-                gehaeusePreis = 100;
+                gehaeusePreis_label.setText("200€");
+                gehaeusePreis = 200;
                 gehaeseB = true;
                 break;
             default:
@@ -724,18 +724,18 @@ public class Konfigurator extends JFrame {
         String cpu = cpu_comboBox.getSelectedItem().toString();
         switch (cpu) {
             case "CPU 1":
-                cpuPreis_label.setText("50€");
-                cpuPreis = 50;
+                cpuPreis_label.setText("150€");
+                cpuPreis = 150;
                 cpuB = true;
                 break;
             case "CPU 2":
-                cpuPreis_label.setText("80€");
-                cpuPreis = 80;
+                cpuPreis_label.setText("250€");
+                cpuPreis = 250;
                 cpuB = true;
                 break;
             case "CPU 3":
-                cpuPreis_label.setText("100€");
-                cpuPreis = 100;
+                cpuPreis_label.setText("400€");
+                cpuPreis = 400;
                 cpuB = true;
                 break;
             default:
@@ -750,18 +750,18 @@ public class Konfigurator extends JFrame {
         String gpu = gpu_comboBox.getSelectedItem().toString();
         switch (gpu) {
             case "GPU 1":
-                gpuPreis_label.setText("50€");
-                gpuPreis = 50;
+                gpuPreis_label.setText("400€");
+                gpuPreis = 400;
                 gpuB = true;
                 break;
             case "GPU 2":
-                gpuPreis_label.setText("80€");
-                gpuPreis = 80;
+                gpuPreis_label.setText("500€");
+                gpuPreis = 500;
                 gpuB = true;
                 break;
             case "GPU 3":
-                gpuPreis_label.setText("100€");
-                gpuPreis = 100;
+                gpuPreis_label.setText("1000€");
+                gpuPreis = 1000;
                 gpuB = true;
                 break;
             default:
@@ -776,18 +776,18 @@ public class Konfigurator extends JFrame {
         String ram = ram_comboBox.getSelectedItem().toString();
         switch (ram) {
             case "RAM 1":
-                ramPreis_label.setText("50€");
-                ramPreis = 50;
+                ramPreis_label.setText("90€");
+                ramPreis = 90;
                 ramB = true;
                 break;
             case "RAM 2":
-                ramPreis_label.setText("80€");
-                ramPreis = 80;
+                ramPreis_label.setText("150€");
+                ramPreis = 150;
                 ramB = true;
                 break;
             case "RAM 3":
-                ramPreis_label.setText("100€");
-                ramPreis = 100;
+                ramPreis_label.setText("300€");
+                ramPreis = 300;
                 ramB = true;
                 break;
             default:
@@ -802,18 +802,18 @@ public class Konfigurator extends JFrame {
         String motherboard = motherboard_comboBox.getSelectedItem().toString();
         switch (motherboard) {
             case "Motherboard 1":
-                motherboardPreis_label.setText("50€");
-                motherboardPreis = 50;
+                motherboardPreis_label.setText("100€");
+                motherboardPreis = 100;
                 motherboardB = true;
                 break;
             case "Motherboard 2":
-                motherboardPreis_label.setText("80€");
-                motherboardPreis = 80;
+                motherboardPreis_label.setText("150€");
+                motherboardPreis = 150;
                 motherboardB = true;
                 break;
             case "Motherboard 3":
-                motherboardPreis_label.setText("100€");
-                motherboardPreis = 100;
+                motherboardPreis_label.setText("250€");
+                motherboardPreis = 250;
                 motherboardB = true;
                 break;
             default:
@@ -833,13 +833,13 @@ public class Konfigurator extends JFrame {
                 cpuCoolerB = true;
                 break;
             case "CPU Cooler 2":
-                cpuCoolerPreis_label.setText("80€");
-                cpuCoolerPreis = 80;
+                cpuCoolerPreis_label.setText("100€");
+                cpuCoolerPreis = 100;
                 cpuCoolerB = true;
                 break;
             case "CPU Cooler 3":
-                cpuCoolerPreis_label.setText("100€");
-                cpuCoolerPreis = 100;
+                cpuCoolerPreis_label.setText("150€");
+                cpuCoolerPreis = 150;
                 cpuCoolerB = true;
                 break;
             default:
@@ -854,13 +854,13 @@ public class Konfigurator extends JFrame {
         String memory = memory_comboBox.getSelectedItem().toString();
         switch (memory) {
             case "SSD 1":
-                memoryPreis_label.setText("50€");
-                memoryPreis = 50;
+                memoryPreis_label.setText("30€");
+                memoryPreis = 30;
                 memoryB = true;
                 break;
             case "SSD 2":
-                memoryPreis_label.setText("80€");
-                memoryPreis = 80;
+                memoryPreis_label.setText("50€");
+                memoryPreis = 50;
                 memoryB = true;
                 break;
             case "SSD 3":
@@ -869,23 +869,23 @@ public class Konfigurator extends JFrame {
                 memoryB = true;
                 break;
             case "HDD 1":
-                memoryPreis_label.setText("100€");
-                memoryPreis = 100;
+                memoryPreis_label.setText("20€");
+                memoryPreis = 20;
                 memoryB = true;
                 break;
             case "HHD 2":
-                memoryPreis_label.setText("100€");
-                memoryPreis = 100;
+                memoryPreis_label.setText("50€");
+                memoryPreis = 50;
                 memoryB = true;
                 break;
             case "NVME 1":
-                memoryPreis_label.setText("100€");
-                memoryPreis = 100;
+                memoryPreis_label.setText("150€");
+                memoryPreis = 150;
                 memoryB = true;
                 break;
             case "NVME 2":
-                memoryPreis_label.setText("100€");
-                memoryPreis = 100;
+                memoryPreis_label.setText("250€");
+                memoryPreis = 250;
                 memoryB = true;
                 break;
             default:
@@ -900,18 +900,18 @@ public class Konfigurator extends JFrame {
         String psu = psu_comboBox.getSelectedItem().toString();
         switch (psu) {
             case "PSU 1":
-                psuPreis_label.setText("50€");
-                psuPreis = 50;
-                psuB = true;
-                break;
-            case "PSU 2":
                 psuPreis_label.setText("80€");
                 psuPreis = 80;
                 psuB = true;
                 break;
-            case "PSU 3":
+            case "PSU 2":
                 psuPreis_label.setText("100€");
                 psuPreis = 100;
+                psuB = true;
+                break;
+            case "PSU 3":
+                psuPreis_label.setText("150€");
+                psuPreis = 150;
                 psuB = true;
                 break;
             default:

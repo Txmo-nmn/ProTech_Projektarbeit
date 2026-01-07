@@ -109,11 +109,11 @@ public class Controller {
     //3 Objecte erstellen
     public void initObjekte(){
         PC pc1 = new PC("Konfiguration 1","Gehäuse 1", "CPU 1", "GPU 1", "RAM 1",
-                "Motherboard 1", "CPU Cooler 1", "SSD 1", "PSU 1", 400,true,1);
+                "Motherboard 1", "CPU Cooler 1", "SSD 1", "PSU 1", 950,true,1);
         PC pc2 = new PC("Konfiguration 2","Gehäuse 2", "CPU 2", "GPU 2", "RAM 2",
-                "Motherboard 2", "CPU Cooler 2", "SSD 2", "PSU 2", 640,true,2);
+                "Motherboard 2", "CPU Cooler 2", "SSD 2", "PSU 2", 1400,true,2);
         PC pc3 = new PC("Konfiguration 3","Gehäuse 3", "CPU 3", "GPU 3", "RAM 3",
-                "Motherboard 3", "CPU Cooler 3", "SSD 3", "PSU 3", 800,true,3);
+                "Motherboard 3", "CPU Cooler 3", "SSD 3", "PSU 3", 2530,true,3);
 
         // automatische Nummerierung
         pcCounter++;

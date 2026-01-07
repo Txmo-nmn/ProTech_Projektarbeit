@@ -45,7 +45,7 @@
           <background color="-394241"/>
           <font size="16" style="1"/>
           <foreground color="-657413"/>
-          <text value="Filter"/>
+          <text value="Sortieren"/>
         </properties>
       </component>
       <component id="af12b" class="javax.swing.JLabel">
