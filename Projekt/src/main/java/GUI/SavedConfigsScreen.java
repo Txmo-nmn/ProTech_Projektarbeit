@@ -202,7 +202,7 @@ public class SavedConfigsScreen extends JFrame{
                 double preis = Double.parseDouble(preisEingabe);
 
                 //gültige Eingabe -> Liste anzeigen
-                showList(controller.presiList(preis));
+                showList(controller.preisList(preis));
             }
             catch (NumberFormatException ex) {
                 JOptionPane.showMessageDialog(

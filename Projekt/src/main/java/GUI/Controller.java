@@ -100,7 +100,7 @@ public class Controller {
     }
 
     //gib nur die Objekte aus die unter/gleich des max Preises sind
-    public List<PC> presiList(double preis){
+    public List<PC> preisList(double preis){
         return pcMap.values().stream()
                 .filter(pc -> pc.getGesPreis() <= preis) // nur PCs unter/gleich Preis
                 .collect(Collectors.toList());
