@@ -98,8 +98,6 @@ public class Konfigurator extends JFrame {
         psu_comboBox.addActionListener(e -> psuPreisChange());
 
 
-
-
         main_Panel.setBorder(
                 BorderFactory.createMatteBorder(
                         0, 24, 0, 24,
@@ -124,7 +122,6 @@ public class Konfigurator extends JFrame {
         gehaeuse_comboBox.setBackground(new Color(46, 46, 46));
         gehaeuse_comboBox.setForeground(Color.WHITE);
         gehaeuse_comboBox.setUI(new BasicComboBoxUI() {
-
             @Override
             protected JButton createArrowButton() {
 
@@ -186,7 +183,6 @@ public class Konfigurator extends JFrame {
         cpu_comboBox.setBackground(new Color(46, 46, 46));
         cpu_comboBox.setForeground(Color.WHITE);
         cpu_comboBox.setUI(new BasicComboBoxUI() {
-
             @Override
             protected JButton createArrowButton() {
 
@@ -693,7 +689,7 @@ public class Konfigurator extends JFrame {
         preisSumme_label.setText("0€");
     }
 
-    // ab hier alles wie gehabt …
+    //Prüft was der User ausgewählt hat
     private void gehaeusePreisChange() {
         String gehaeuse = gehaeuse_comboBox.getSelectedItem().toString();
         switch (gehaeuse) {

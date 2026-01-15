@@ -89,8 +89,6 @@ public class SavedConfigsScreen extends JFrame{
         });
 
 
-
-
         buttonBack.setBorder(normalBorder);
         buttonBack.setFocusPainted(false);
         buttonBack.setBorderPainted(true);
@@ -123,7 +121,6 @@ public class SavedConfigsScreen extends JFrame{
         sortPreis_comboBox.setBackground(new Color(46, 46, 46));
         sortPreis_comboBox.setForeground(Color.WHITE);
         sortPreis_comboBox.setUI(new BasicComboBoxUI() {
-
             @Override
             protected JButton createArrowButton() {
 
@@ -179,7 +176,6 @@ public class SavedConfigsScreen extends JFrame{
             }
         });
 
-
         preis_textField.setBackground(new Color(46, 46, 46));
         preis_textField.setForeground(Color.WHITE);
         preis_textField.setBorder(BorderFactory.createMatteBorder(
@@ -192,7 +188,6 @@ public class SavedConfigsScreen extends JFrame{
             try {
                 String preisEingabe = preis_textField.getText().trim(); //trim entfernt leerzeichen
 
-                //wirft Fehler bei leerem Textfeld
                 if (preisEingabe.isEmpty()) {
                     showList(controller.unsortList());
                     return;
@@ -225,7 +220,7 @@ public class SavedConfigsScreen extends JFrame{
                 "Motherboard", "Kühler", "Speicher", "Netzteil","Vollständig","Preis"
         };
 
-        // Daten-The matrix
+        //Erstellung einer Matrix um alles richtig in die Tabelle einzutragen
         Object[][] data = new Object[pcs.size()][columnNames.length];
 
         for (int i = 0; i < pcs.size(); i++) {
@@ -243,13 +238,13 @@ public class SavedConfigsScreen extends JFrame{
             data[i][10] = pc.getGesPreis();
         }
 
-        // Model erstellen und der vorhandenen JTable zuweisen
+        //Model erstellen und der vorhandenen JTable zuweisen (Inhalt der Tabelle)
         objektAusgabe_table.setModel(new javax.swing.table.DefaultTableModel(
                 data,
                 columnNames
         ));
 
-        // Optional: Sortierfunktion aktivieren
+        //Sortierfunktion aktivieren
         objektAusgabe_table.setAutoCreateRowSorter(true);
         objektAusgabe_table.setRowHeight(28);
         objektAusgabe_table.setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);
